@@ -142,15 +142,3 @@
   border-radius: var(--radius); /* 为图片添加统一的圆角 */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加一点阴影，让图片看起来更立体，像卡片一样 */
 }
-
-/* === 代码块中的 <pre> 标签优化 === */
-/*
- * 我们在 .output-box 中使用了 <pre> 来保留格式。
- * 这里为它添加一些专属样式。
- */
-.output-box pre {
-  margin: 0; /* 移除浏览器可能为 pre 标签添加的默认外边距 */
-  font-family: inherit; /* 让 pre 继承 .output-box 定义的等宽字体 */
-  font-size: 0.95rem;
-  line-height: 1.6;
-}

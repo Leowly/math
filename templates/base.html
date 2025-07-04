@@ -1,20 +1,38 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}数学技巧{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 样式文件 -->
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='content-styles.css') }}">
-  <!-- 添加 viewport 元标签，这是响应式设计的关键 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}">
+
+  <!-- KaTeX 渲染脚本 -->
+  <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
 </head>
+
 <body>
-  <div class="main-content"> <!-- 将内容包裹起来 -->
+  <div class="main-content">
     <div class="page-header">
-        <a href="{{ url_for('index') }}" class="back-link">← 返回目录</a>
+      <a href="{{ url_for('index') }}" class="back-link">← 返回目录</a>
     </div>
-  {% block content %}{% endblock %}
+
+    {% block content %}{% endblock %}
   </div>
 </body>
 </html>
