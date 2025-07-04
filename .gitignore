@@ -1,0 +1,18 @@
+# 虚拟环境
+.venv
+
+# Python 缓存和临时文件
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+build/
+dist/
+wheels/
+*.egg-info
+
+# 编辑器/IDE 配置
+.vscode/
+.idea/
+
+run.sh~

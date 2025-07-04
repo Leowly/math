@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}求距离｜选修1{% endblock %}
+
+{% block content %}
+<div class="chapter-content">
+  <h2>使用向量法求点到平面的距离（计算器技巧）</h2>
+
+  <p>在立体几何中，求点到平面的距离是一个常见题型。传统方法计算量较大，但借助科学计算器的向量功能，我们可以快速、准确地得到答案。下面是详细的操作步骤。</p>
+
+  <h3>步骤1：准备工作 - 定义坐标</h3>
+  <p>首先，我们需要确定题目中四个关键点的空间坐标：</p>
+  <ul>
+    <li>平面上的点 A: (A<sub>x</sub>, A<sub>y</sub>, A<sub>z</sub>)</li>
+    <li>平面上的点 B: (B<sub>x</sub>, B<sub>y</sub>, B<sub>z</sub>)</li>
+    <li>平面上的点 C: (C<sub>x</sub>, C<sub>y</sub>, C<sub>z</sub>)</li>
+    <li>平面外的点 P: (P<sub>x</sub>, P<sub>y</sub>, P<sub>z</sub>)</li>
+  </ul>
+  <div class="tip-box">
+    <p>这里的核心任务是求点 P 到由 A, B, C 三点确定的平面的距离。</p>
+  </div>
+
+  <h3>步骤2：构造平面内的两个向量</h3>
+  <p>为了描述这个平面，我们需要平面上的两个不共线的向量。通常我们选取由 A 点出发的两个向量：</p>
+  <div class="output-box">
+    &vec;AB = B - A = (B<sub>x</sub> - A<sub>x</sub>, B<sub>y</sub> - A<sub>y</sub>, B<sub>z</sub> - A<sub>z</sub>)<br>
+    &vec;AC = C - A = (C<sub>x</sub> - A<sub>x</sub>, C<sub>y</sub> - A<sub>y</sub>, C<sub>z</sub> - A<sub>z</sub>)
+  </div>
+
+  <h3>步骤3：计算平面的法向量 &vec;n</h3>
+  <p>平面的法向量 &vec;n 垂直于平面上的所有向量，可以通过 &vec;AB 和 &vec;AC 的**叉积**（Cross Product）得到。</p>
+  
+  <p>叉积的计算公式如下（以 &vec;AB = (u₁, u₂, u₃) 和 &vec;AC = (v₁, v₂, v₃) 为例）：</p>
+  <div class="output-box">
+<pre>
+&vec;n = &vec;AB × &vec;AC = 
+                 | i   j  k  |
+                 | u₁  u₂  u₃ |
+                 | v₁  v₂  v₃ |
+
+   = (i(u₂v₃ - u₃v₂) , j(u₁v₃ - u₃v₁) , k(u₁v₂ - u₂v₁))
+</pre>
+  </div>
+  <div class="tip-box">
+    <p>&vec;n = &vec;AB × &vec;AC也可以直接在计算机中输入外积计算。这里的VctA =(1 , 2 , 3)  VctB =(4 , 5 , 6)
+    <img src="{{ url_for('static', filename='images/x1_3_4_step3_1.jpg') }}" alt="计算器输入投影公式" style="width: 300px; max-width: 80%; display: block; margin: 1rem auto;">
+    按 <span class="kbd">=</span>后即可求出&vec;n
+    <img src="{{ url_for('static', filename='images/x1_3_4_step3_2.jpg') }}" alt="计算器输入投影公式" style="width: 300px; max-width: 80%; display: block; margin: 1rem auto;">
+    </p>
+  </div>
+
+  <h3>步骤4：使用计算器计算投影值</h3>
+  <p>点到平面的距离公式为：d = |(&vec;PA ⋅ &vec;n)| / |&vec;n|。我们利用计算器的向量模式来计算公式的核心部分。</p>
+  <ol>
+    <li>进入计算器的“向量”模式。</li>
+    <li>定义向量 <span class="kbd">VctA</span>：这是从平面上任意一点指向点P的向量，我们使用 &vec;AP = P - A。</li>
+    <li>定义向量 <span class="kbd">VctB</span>：这是我们在步骤3中计算出的法向量 &vec;n。</li>
+    <li>在计算器中输入公式：<code>VctA · VctB ÷ Abs(VctB)</code> 然后按 <span class="kbd">=</span>。</li>
+  </ol>
+  <img src="{{ url_for('static', filename='images/x1_3_4_step4_1.jpg') }}" alt="计算器输入投影公式" style="width: 300px; max-width: 80%; display: block; margin: 1rem auto;">
+  <div class="notice-box">
+    <p>这一步计算的是向量 &vec;AP 在法向量 &vec;n 上的投影值。因为没有加最外层的绝对值，所以结果可能是负数。我们将在下一步处理符号问题。</p>
+  </div>
+
+
+  <h3>步骤5：获取精确的最终答案（关键技巧）</h3>
+  <p>上一步得到了一个小数，并且可能为负数。为了得到带根号的精确正值，我们使用以下技巧：</p>
+  <ol>
+    <li>将上一步的计算结果（Ans）储存到变量中。例如，按 <span class="kbd">STO</span> → <span class="kbd">x</span> 将结果存入变量 x。</li>
+    <img src="{{ url_for('static', filename='images/x1_3_4_step5_2.jpg') }}" alt="将结果存入变量x" style="width: 300px; max-width: 80%; display: block; margin: 1rem auto;">
+    
+    <li>切换到常规的“计算”模式。</li>
+    
+    <li>输入表达式 <span class="kbd">√</span>(<span class="kbd">x</span><span class="kbd">²</span>) 并按 <span class="kbd">=</span>。计算器就会显示最终的、化简过的、带根号的正确答案！</li>
+    <img src="{{ url_for('static', filename='images/x1_3_4_step5_2.jpg') }}" alt="计算x的平方根得到精确值" style="width: 300px; max-width: 80%; display: block; margin: 1rem auto;">
+  </ol>
+  
+  <div class="tip-box">
+    <h4>为什么这个方法有效？</h4>
+    <p>这个技巧一箭双雕：<br>
+    1. <strong>处理正负号：</strong>对一个数先平方再开方，等效于取它的绝对值 (<code>√(x²) = |x|</code>)，完美解决了第4步中可能出现的负号问题。<br>
+    2. <strong>小数转根式：</strong>像卡西欧这类科学计算器，在“计算”模式下有强大的化简能力。当它计算一个“干净”的无理数的平方根时，会优先尝试给出带根号的精确形式，而不是小数近似值。
+    </p>
+  </div>
+
+</div>
+{% endblock %}

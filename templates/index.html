@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>数学答题技巧</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1 class="site-title">数学答题技巧目录</h1>
+  <div id="toc">
+    {% for book, chapters in grouped %}
+    <details>
+      <summary>{{ book }}</summary>
+      <ul class="unit-list">
+        {% for item in chapters %}
+        <li><a href="{{ url_for('view', template=item.template) }}">{{ item.unit }} {{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endfor %}
+  </div>
+</body>
+</html>

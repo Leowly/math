@@ -1,0 +1,156 @@
+/*
+ * content-styles.css
+ * ------------------
+ * 这个文件专门用于定义章节正文内部的各种内容元素的样式，
+ * 例如提示框、代码块、键盘按键等，与主布局样式分离。
+ */
+
+/* === 定义一些用于内容的变量（可选，但推荐） === */
+:root {
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --font-mono: "JetBrainsMono Nerd Font", "Fira Code", "Cascadia Code", monospace;
+  --yellow-light: #fffbe6;
+  --yellow-dark: #ffc107;
+  --grey-code-bg: #f3f4f6; /* 一个比页面背景稍深的灰色 */
+}
+
+/* === 内容容器 === */
+/* 我们为所有章节内容创建一个总的容器，方便统一管理字体和间距 */
+.chapter-content {
+  max-width: 100%; /* 确保在父容器内正常显示 */
+}
+
+/* === 正文段落样式 === */
+/* 为正文<p>标签设置更优化的阅读样式 */
+.chapter-content p {
+  font-size: 1.05rem;     /* 略微增大字号，提升阅读舒适度 */
+  line-height: 1.8;       /* 增大行高是提升大段文字可读性的关键 */
+  color: #333;
+  margin-bottom: 1.2em;   /* 段落下方留出足够间距 */
+  /* 可以考虑使用衬线字体以获得更好的长文阅读体验 */
+  /* font-family: var(--font-serif); */ 
+}
+
+
+/* === 1. “注意”提示框 (黄底) === */
+.notice-box {
+  background-color: var(--yellow-light); /* 浅黄色背景 */
+  border-left: 4px solid var(--yellow-dark); /* 左侧有明显的黄色边框作为强调 */
+  padding: 1rem 1.2rem;   /* 넉넉한内边距 */
+  margin: 1.5rem 0;       /* 与上下文保持距离 */
+  border-radius: 0 var(--radius) var(--radius) 0; /* 圆角与边框侧对齐 */
+}
+.notice-box p:last-child {
+  margin-bottom: 0; /* 去掉提示框内最后一个段落的下边距，使布局更紧凑 */
+}
+/* 使用伪元素添加一个 "注意" 图标或文字 */
+.notice-box::before {
+  content: "⚠️ 注意";
+  font-weight: 600;
+  color: #c79100; /* 深黄色文字 */
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+/* === 2. “小贴士”提示框 (蓝底) === */
+.tip-box {
+  background-color: var(--blue-light); /* 使用主题浅蓝色 */
+  border-left: 4px solid var(--blue);  /* 使用主题蓝色边框 */
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.tip-box p:last-child {
+  margin-bottom: 0;
+}
+.tip-box::before {
+  content: "💡 小贴士";
+  font-weight: 600;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+/* === 3. 计算机按键样式 === */
+.kbd {
+  display: inline-block; /* 使其可以设置内外边距 */
+  padding: 0.1em 0.4em;  /* 细微的内边距 */
+  font-family: var(--font-mono); /* 使用等宽字体 */
+  font-size: 0.9em;      /* 比周围文字稍小一点 */
+  
+  color: #222;           /* 黑字 */
+  background-color: var(--grey-code-bg); /* 灰底 */
+  
+  border: 1px solid #ccc; /* 浅灰色边框 */
+  border-bottom: 2px solid #ccc; /* 底部边框稍厚，营造立体感 */
+  border-radius: 4px;    /* 小圆角 */
+  
+  /* 防止用户意外选中 */
+  user-select: none;
+}
+
+
+/* === 4. 计算机查看框/代码框 === */
+.output-box {
+  background: #fff;       /* 白底 */
+  border: 1px solid #333; /* 黑色边框 */
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  
+  font-family: var(--font-mono); /* 必须使用等宽字体 */
+  color: #111;           /* 纯黑字 */
+  white-space: pre-wrap;  /* 保留空白符和换行，但允许自动换行 */
+  overflow-x: auto;       /* 如果内容过长，出现水平滚动条 */
+}
+
+/* === 内容子标题 (H3) === */
+/* 用于章节内部的小标题，比如 "步骤1", "步骤2" */
+.chapter-content h3 {
+  font-size: 1.3rem;
+  color: #444; /* 比 h2 颜色稍浅，形成层次感 */
+  border-left: 3px solid var(--blue); /* 使用一个左侧边框来装饰，比 h2 的下划线更轻量 */
+  padding-left: 0.8rem;
+  margin-top: 2.5rem; /* 与上文拉开足够的距离，标志新段落的开始 */
+  margin-bottom: 1rem;
+}
+
+/* === 列表样式 (无序列表 ul 和 有序列表 ol) === */
+.chapter-content ul,
+.chapter-content ol {
+  padding-left: 1.8rem; /* 增加列表的左内边距，使其有足够的缩进 */
+  margin-bottom: 1.2rem;
+}
+
+/* === 列表项样式 (li) === */
+.chapter-content li {
+  margin-bottom: 0.7rem; /* 列表项之间增加垂直间距，避免拥挤 */
+  line-height: 1.7;    /* 确保列表项内的文字行高舒适 */
+}
+.chapter-content li:last-child {
+  margin-bottom: 0; /* 最后一个列表项不需要下外边距 */
+}
+
+/* === 教程图片样式 === */
+.chapter-content img {
+  max-width: 100%; /* 核心：确保图片不会超出其容器的宽度，这是响应式图片的基础 */
+  height: auto;    /* 保持图片的原始宽高比 */
+  display: block;  /* 让图片成为块级元素，方便设置 margin auto 来居中 */
+  margin: 1rem auto; /* 上下留出间距，左右自动居中 */
+  border-radius: var(--radius); /* 为图片添加统一的圆角 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加一点阴影，让图片看起来更立体，像卡片一样 */
+}
+
+/* === 代码块中的 <pre> 标签优化 === */
+/*
+ * 我们在 .output-box 中使用了 <pre> 来保留格式。
+ * 这里为它添加一些专属样式。
+ */
+.output-box pre {
+  margin: 0; /* 移除浏览器可能为 pre 标签添加的默认外边距 */
+  font-family: inherit; /* 让 pre 继承 .output-box 定义的等宽字体 */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
