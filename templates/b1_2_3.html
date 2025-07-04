@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}基本不等式｜必修1{% endblock %}
+
+{% block content %}
+<div class="chapter-content">
+  <h2>“乘1法”：巧妙构造基本不等式求最值</h2>
+  <p>在处理含有特定约束条件（如 \(ax+by=c\)）的最值问题时，直接套用基本不等式 \( a+b \ge 2\sqrt{ab} \) 往往很困难。此时，一个非常强大且优雅的技巧——“乘1法”——便能派上用场。其核心思想是，<strong>将目标式乘以一个值为“1”的代数式，从而拼凑出可以使用基本不等式的形式。</strong></p>
+
+  <h3>核心例题</h3>
+  <p>我们通过下面两个经典的例题来掌握这个技巧。</p>
+  
+  <p><strong>问题1:</strong> 已知正数 \(x, y\) 满足 \(x + 2y - 1 = 0\)，且不等式 \(m \le \frac{1}{x} + \frac{1}{y}\) 对任意满足条件的正数 \(x, y\) 恒成立。则实数 \(m\) 的取值范围是 ______。</p>
+  <p><strong>问题2:</strong> 已知 \(x > 0, y > 0\)，且 \(x + 4y = xy\)，则 \(x + y\) 的最小值为 ______。</p>
+
+  <div class="notice-box">
+    <h4>前提回顾：基本不等式</h4>
+    <p>对于任意正数 \(a, b\)，有 \(a+b \ge 2\sqrt{ab}\)。等号当且仅当 \(a=b\) 时成立。这是我们后续所有计算的基础。</p>
+  </div>
+
+  <h3>步骤1：构造“常数1”</h3>
+  <p>解题的关键，是先将题目给出的约束条件巧妙地变形，得到一个值为 1 的表达式。这是“乘1法”的“1”的来源。</p>
+  <p><strong>对于问题1：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( x + 2y - 1 = 0 \implies x + 2y = 1 \)
+  </div>
+  <p><strong>对于问题2：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( x + 4y = xy \quad \xrightarrow{\text{两边同除以 } xy} \quad \frac{1}{y} + \frac{4}{x} = 1 \)
+  </div>
+  
+  <h3>步骤2：核心技巧——“乘1法”</h3>
+  <p>现在，我们将要求最值的目标式，乘以我们在上一步构造出的“1”。这一步的目的是拆开括号后，制造出形如 \( \frac{a}{b} + \frac{b}{a} \) 的互为倒数的项。</p>
+  <p><strong>对于问题1，求 \( \frac{1}{x} + \frac{1}{y} \) 的最小值：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{1}{x} + \frac{1}{y} = \left(\frac{1}{x} + \frac{1}{y}\right) \times 1 = \left(\frac{1}{x} + \frac{1}{y}\right)(x+2y) = 1 + \frac{2y}{x} + \frac{x}{y} + 2 = 3 + \frac{2y}{x} + \frac{x}{y} \)
+  </div>
+  <p><strong>对于问题2，求 \( x + y \) 的最小值：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( x + y = (x+y) \times 1 = (x+y)\left(\frac{1}{y} + \frac{4}{x}\right) = \frac{x}{y} + 4 + 1 + \frac{4y}{x} = 5 + \frac{x}{y} + \frac{4y}{x} \)
+  </div>
+
+  <div class="tip-box">
+      <h4>💡 为什么“乘1法”有效？</h4>
+      <p>它就像一个代数魔术，通过引入一个值为1的、包含 \(x\) 和 \(y\) 的式子，强行将目标表达式展开成 “<strong>常数 + 变量部分</strong>” 的结构。而这个“变量部分”恰好是可以应用基本不等式的完美形式！</p>
+  </div>
+
+  <h3>步骤3：应用基本不等式</h3>
+  <p>现在，我们对上一步得到的“变量部分”使用基本不等式。</p>
+  <p><strong>对于问题1：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{2y}{x} + \frac{x}{y} \ge 2\sqrt{\frac{2y}{x} \cdot \frac{x}{y}} = 2\sqrt{2} \)
+  </div>
+  <p><strong>对于问题2：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{x}{y} + \frac{4y}{x} \ge 2\sqrt{\frac{x}{y} \cdot \frac{4y}{x}} = 2\sqrt{4} = 4 \)
+  </div>
+
+  <h3>步骤4：整合求解，得出最终答案</h3>
+  <p>最后一步，我们将常数项与变量部分的最小值相加，得到整个表达式的最值，并根据题意回答问题。</p>
+  <p><strong>对于问题1：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \left(\frac{1}{x} + \frac{1}{y}\right)_{\min} = 3 + \left(\frac{2y}{x} + \frac{x}{y}\right)_{\min} = 3 + 2\sqrt{2} \)
+  </div>
+  <p>题目要求 \(m \le \frac{1}{x} + \frac{1}{y}\) <strong>恒成立</strong>。这意味着 \(m\) 必须小于或等于 \( \frac{1}{x} + \frac{1}{y} \) 的<strong>最小值</strong>。因此，\(m\) 的取值范围是 \( (-\infty, 3 + 2\sqrt{2}] \)。</p>
+
+  <p><strong>对于问题2：</strong></p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( (x+y)_{\min} = 5 + \left(\frac{x}{y} + \frac{4y}{x}\right)_{\min} = 5 + 4 = 9 \)
+  </div>
+  
+  <div class="tip-box">
+      <h4>别忘了“取等条件”！</h4>
+      <p>虽然解题过程中不一定需要写出，但心中要有数。基本不等式能取到等号，是“最小值”存在的保障。</p>
+      <ul>
+          <li>问题1中，当 \( \frac{2y}{x} = \frac{x}{y} \) 时取等。</li>
+          <li>问题2中，当 \( \frac{x}{y} = \frac{4y}{x} \) 时取等。</li>
+      </ul>
+      <p>你可以将取等条件代入原约束方程，验证此时的 \(x, y\) 是否存在且为正数。</p>
+  </div>
+
+</div>
+{% endblock %}

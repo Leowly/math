@@ -18,6 +18,7 @@
 /* 我们为所有章节内容创建一个总的容器，方便统一管理字体和间距 */
 .chapter-content {
   max-width: 100%; /* 确保在父容器内正常显示 */
+  overflow-x: hidden;
 }
 
 /* === 正文段落样式 === */
@@ -94,16 +95,20 @@
 
 /* === 4. 计算机查看框/代码框 === */
 .output-box {
-  background: #fff;       /* 白底 */
-  border: 1px solid #333; /* 黑色边框 */
+  /* 核心修复：重置最小宽度，防止内容撑开盒子 */
+  min-width: 0;
+
+  /* 保留这些，让它可以滚动 */
+  overflow-x: auto;
+  
+  /* 保留原有的美化样式 */
+  background: #fff;
+  border: 1px solid #333;
   border-radius: var(--radius);
   padding: 1rem;
   margin: 1.5rem 0;
-  
-  font-family: var(--font-mono); /* 必须使用等宽字体 */
-  color: #111;           /* 纯黑字 */
-  white-space: pre-wrap;  /* 保留空白符和换行，但允许自动换行 */
-  overflow-x: auto;       /* 如果内容过长，出现水平滚动条 */
+  font-family: var(--font-mono);
+  color: #111;
 }
 
 /* === 内容子标题 (H3) === */

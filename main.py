@@ -68,6 +68,10 @@ def view(template):
         abort(404)
     return render_template(template)
 
+@app.route('/favicon.ico')
+def favicon():
+    # 直接返回一个 204 No Content 响应，告诉浏览器这里没有图标。
+    return ('', 204)
 
 if __name__ == "__main__":
     app.run(debug=True, host="::", port=6400)
