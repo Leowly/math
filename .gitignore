@@ -15,4 +15,6 @@ wheels/
 .vscode/
 .idea/
 
-run.sh~
+# 忽略特定文件
+run.sh
+pyrightconfig.json
