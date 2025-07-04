@@ -17,4 +17,5 @@ wheels/
 
 # 忽略特定文件
 run.sh
+sync.sh
 pyrightconfig.json
