@@ -39,8 +39,8 @@
 
 1.  **克隆仓库**
     ```bash
-    git clone https://github.com/your-username/math-notes.git
-    cd math-notes
+    git clone https://github.com/Leowly/math.git
+    cd math
     ```
 
 2.  **创建虚拟环境并安装依赖**
@@ -51,13 +51,8 @@
     这会创建一个名为 `.venv` 的虚拟环境并安装所有 `pyproject.toml` 中定义的依赖。
 
 3.  **运行开发服务器**
-    项目提供了一个便捷的启动脚本 `run.sh`，或者你可以直接运行 `main.py`。
+    你可以直接运行 `main.py`。
     ```bash
-    # 方式一：使用脚本 (推荐)
-    # (如果需要，先给脚本执行权限: chmod +x run.sh)
-    ./run.sh
-
-    # 方式二：直接运行
     uv run python main.py
     ```
     启动后，在浏览器中访问 `http://127.0.0.1:6400` 即可看到网站。
