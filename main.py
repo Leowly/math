@@ -49,11 +49,12 @@ def index():
         display_name = book_names.get(book_code, book_code)
         # setdefault 会按遇到的顺序添加新键，从而保持顺序
         grouped.setdefault(display_name, []).append(
-            {"unit": unit, "name": name, "template": ensure_template(book_code, unit, name)}
+            {
+                "unit": unit,
+                "name": name,
+                "template": ensure_template(book_code, unit, name),
+            }
         )
-    
-    # 直接使用 grouped.items()，它会保持插入顺序
-    # 不再需要 sorted() 函数进行排序
     return render_template("index.html", grouped=grouped.items())
 
 
@@ -65,12 +66,11 @@ def view(template):
     return render_template(template)
 
 
-@app.route('/favicon.ico')
+@app.route("/favicon.ico")
 def favicon():
-    return ('', 204)
+    return ("", 204)
 
 
 if __name__ == "__main__":
-    # 按照您的建议，在启动前可以先运行 format.py
-    # 例如在 shell 中: python format.py && uv run python main.py
     app.run(debug=True, host="::", port=6400)
+
