@@ -1,0 +1,593 @@
+{% extends "base.html" %}
+
+{% block title %}不等式｜试卷{% endblock %}
+
+{% block content %}
+<div class="chapter-content">
+  <h2>不等式与二次函数综合题集</h2>
+  <p>本页包含了一系列关于不等式和二次函数的综合练习题，涵盖了基本不等式、恒成立问题、韦达定理、参数范围讨论等多个核心知识点。</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第1题</h3>
+  <p><strong>【原题】</strong>已知正数 \(x, y\) 满足 \(x + 2y - 1 = 0\)，且不等式 \(m \le \frac{1}{x} + \frac{1}{y}\) 对任意的正数 \(x, y\) 恒成立。则实数 \(m\) 的取值范围是 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>题目要求 \(m\) 小于等于 \(\frac{1}{x} + \frac{1}{y}\) 对满足条件的所有正数 \(x, y\) 恒成立，这意味着 \(m\) 必须小于或等于 \(\frac{1}{x} + \frac{1}{y}\) 的<strong>最小值</strong>。</p>
+  <p>我们来求 \(\frac{1}{x} + \frac{1}{y}\) 的最小值。由已知条件 \(x > 0, y > 0\) 且 \(x + 2y = 1\)。我们使用<strong>“乘1法”</strong>：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{1}{x} + \frac{1}{y} = \left(\frac{1}{x} + \frac{1}{y}\right) \times 1 = \left(\frac{1}{x} + \frac{1}{y}\right)(x + 2y) = 1 + \frac{2y}{x} + \frac{x}{y} + 2 = 3 + \frac{2y}{x} + \frac{x}{y} \)
+  </div>
+  <p>根据基本不等式，因为 \(x, y\) 都是正数，所以 \(\frac{2y}{x}\) 和 \(\frac{x}{y}\) 也是正数：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{2y}{x} + \frac{x}{y} \ge 2\sqrt{\frac{2y}{x} \cdot \frac{x}{y}} = 2\sqrt{2} \)
+  </div>
+  <p>所以，\(\frac{1}{x} + \frac{1}{y} \ge 3 + 2\sqrt{2}\)。等号成立的条件是 \(\frac{2y}{x} = \frac{x}{y}\)，即 \(x^2 = 2y^2\)，\(x = y\sqrt{2}\)。将此代入 \(x + 2y = 1\) 可以解出正数 \(x, y\)，说明等号可以取到。</p>
+  <p>因此，\(\frac{1}{x} + \frac{1}{y}\) 的最小值为 \(3 + 2\sqrt{2}\)。因为 \(m \le \frac{1}{x} + \frac{1}{y}\) 恒成立，所以 \(m\) 必须小于等于其最小值。</p>
+  <p><strong>【答案】</strong>\( (-\infty, 3 + 2\sqrt{2}] \)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第2题</h3>
+  <p><strong>【原题】</strong>已知正数 \(a, b, c\) 满足 \(a + 2b = 4\)，\(c > 1\)，则 \(\frac{bc}{2a} + \frac{c}{b} - \frac{c}{2} + \frac{2\sqrt{2}}{c-1}\) 的最小值为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>原式可以进行如下变形：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( E = \frac{bc}{2a} + \frac{c}{b} - \frac{c}{2} + \frac{2\sqrt{2}}{c-1} = c \left( \frac{b}{2a} + \frac{1}{b} - \frac{1}{2} \right) + \frac{2\sqrt{2}}{c-1} \)
+  </div>
+  <p>我们先处理括号内的部分 \(F = \frac{b}{2a} + \frac{1}{b} - \frac{1}{2}\)。利用 \(a + 2b = 4 \implies 1 = \frac{a+2b}{4}\)，我们可以进行“齐次化”代换：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{1}{b} = \frac{a+2b}{4b} = \frac{a}{4b} + \frac{2b}{4b} = \frac{a}{4b} + \frac{1}{2} \)
+  </div>
+  <p>代入 \(F\) 中：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( F = \frac{b}{2a} + \left(\frac{a}{4b} + \frac{1}{2}\right) - \frac{1}{2} = \frac{b}{2a} + \frac{a}{4b} \ge 2\sqrt{\frac{b}{2a} \cdot \frac{a}{4b}} = 2\sqrt{\frac{1}{8}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \)
+  </div>
+  <p>将 \(F\) 的最小值代回原表达式 \(E\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( E \ge c \cdot \frac{\sqrt{2}}{2} + \frac{2\sqrt{2}}{c-1} \)
+  </div>
+  <p>令 \(g(c) = \frac{\sqrt{2}}{2}c + \frac{2\sqrt{2}}{c-1}\)。这是一个对勾函数形式，我们通过配凑 \(c-1\) 来求解：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( g(c) = \frac{\sqrt{2}}{2}(c-1 + 1) + \frac{2\sqrt{2}}{c-1} = \frac{\sqrt{2}}{2}(c-1) + \frac{\sqrt{2}}{2} + \frac{2\sqrt{2}}{c-1} = \frac{\sqrt{2}}{2} + \left[ \frac{\sqrt{2}}{2}(c-1) + \frac{2\sqrt{2}}{c-1} \right] \)
+  </div>
+  <p>对中括号内的部分使用基本不等式（因为 \(c>1\)，所以 \(c-1>0\)）：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( \left[ \dots \right] \ge 2\sqrt{\frac{\sqrt{2}}{2}(c-1) \cdot \frac{2\sqrt{2}}{c-1}} = 2\sqrt{2} \)
+  </div>
+  <p>所以，\(g(c) \ge \frac{\sqrt{2}}{2} + 2\sqrt{2} = \frac{5\sqrt{2}}{2}\)。因此，原表达式 \(E\) 的最小值为 \(\frac{5\sqrt{2}}{2}\)。</p>
+  <p><strong>【答案】</strong>\( \frac{5\sqrt{2}}{2} \)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第3题</h3>
+  <p><strong>【原题】</strong>已知关于 \(x\) 的不等式 \(x^2 + 2024^2 + |x^3 - 2024x^2| \ge ax\) 在 \(x > 0\) 时恒成立，实数 \(a\) 的取值范围为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>因为 \(x > 0\)，我们可以将不等式两边同时除以 \(x\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( a \le \frac{x^2 + 2024^2 + |x^2(x - 2024)|}{x} = x + \frac{2024^2}{x} + \frac{x^2|x - 2024|}{x} = x + \frac{2024^2}{x} + x|x - 2024| \)
+  </div>
+  <div class="notice-box">
+    <p>注意：\(|x^3 - 2024x^2| = |x^2(x-2024)| = x^2|x-2024|\)，因为 \(x^2 > 0\)。</p>
+  </div>
+  <p>该不等式恒成立，意味着 \(a\) 必须小于等于右边表达式的最小值。令 \(k = 2024\)，则右侧表达式为 \(f(x) = x + \frac{k^2}{x} + x|x - k|\)。</p>
+  <div class="tip-box">
+  <p><strong>特殊值法猜想</strong>：这种形式的函数，最值点往往出现在绝对值符号内为零的位置，即 \(x=k\)。</p>
+  </div>
+  <p>我们来检验 \(x=k\) 这一点的值：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( f(k) = k + \frac{k^2}{k} + k|k - k| = k + k + 0 = 2k = 2 \times 2024 = 4048 \)
+  </div>
+  <p>通过分类讨论或求导可以证明 \(x=k\) 是最小值点。
+  <ul>
+      <li>当 \(x > k\) 时, \(f(x) = x + \frac{k^2}{x} + x(x - k) = x^2 - (k-1)x + \frac{k^2}{x}\)。</li>
+      <li>当 \(0 < x < k\) 时, \(f(x) = x + \frac{k^2}{x} + x(k - x) = -x^2 + (k+1)x + \frac{k^2}{x}\)。</li>
+  </ul>
+  可以证明函数在 \((0, k]\) 上单调递减，在 \([k, +\infty)\) 上单调递增。因此，\(f(x)\) 的最小值为 \(f(k) = 4048\)。
+  所以 \(a\) 的取值范围是 \(a \le 4048\)。</p>
+  <p><strong>【答案】</strong>\( (-\infty, 4048] \)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第4题</h3>
+  <p><strong>【原题】</strong>已知 \(x > 0, y > 0\)，\(x + 4y = xy\)，则 \(x + y\) 的最小值为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>因为 \(x > 0, y > 0\)，所以 \(xy > 0\)。将等式 \(x + 4y = xy\) 两边同时除以 \(xy\)，得到：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{x}{xy} + \frac{4y}{xy} = \frac{xy}{xy} \implies \frac{1}{y} + \frac{4}{x} = 1 \)
+  </div>
+  <p>我们要求 \(x + y\) 的最小值。使用<strong>“乘1法”</strong>：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( x + y = (x + y) \times 1 = (x + y)\left(\frac{1}{y} + \frac{4}{x}\right) = \frac{x}{y} + 4 + 1 + \frac{4y}{x} = 5 + \left(\frac{x}{y} + \frac{4y}{x}\right) \)
+  </div>
+  <p>根据基本不等式：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \frac{x}{y} + \frac{4y}{x} \ge 2\sqrt{\frac{x}{y} \cdot \frac{4y}{x}} = 2\sqrt{4} = 4 \)
+  </div>
+  <p>当且仅当 \(\frac{x}{y} = \frac{4y}{x}\)，即 \(x^2 = 4y^2\)，\(x = 2y\) 时等号成立。
+  所以，\(x + y \ge 5 + 4 = 9\)。最小值为9。</p>
+  <p><strong>【答案】</strong>9</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第5题</h3>
+  <p><strong>【原题】</strong>已知关于 \(x\) 的不等式 \((a^2 - 1)x^2 + (a + 1)x + \frac{1}{2} > 0\) 对一切实数 \(x\) 恒成立，则实数 \(a\) 的取值范围为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>分两种情况讨论系数 \(a^2 - 1\)：</p>
+  <p><strong>Case 1:</strong> 当 \(a^2 - 1 = 0\)，即 \(a=1\) 或 \(a=-1\) 时。
+  <ul>
+    <li>当 \(a = 1\) 时，不等式变为 \(2x + \frac{1}{2} > 0\)。这显然不对所有实数 \(x\) 成立。</li>
+    <li>当 \(a = -1\) 时，不等式变为 \(0 \cdot x^2 + 0 \cdot x + \frac{1}{2} > 0\)，即 \(\frac{1}{2} > 0\)。这对所有实数 \(x\) 都成立。所以 <strong>\(a = -1\)</strong> 是一个解。</li>
+  </ul>
+  </p>
+  <p><strong>Case 2:</strong> 当 \(a^2 - 1 \ne 0\)，即该不等式是二次不等式。
+  要使二次函数图像始终在 x 轴上方，必须满足两个条件：</p>
+  <ol>
+    <li>抛物线开口向上：\(a^2 - 1 > 0 \implies a > 1\) 或 \(a < -1\)。</li>
+    <li>抛物线与 x 轴没有交点：\(\Delta < 0\)。</li>
+  </ol>
+  <p>计算判别式 \(\Delta\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \Delta = (a+1)^2 - 4(a^2 - 1)(\frac{1}{2}) = (a+1)^2 - 2(a-1)(a+1) = (a+1)[(a+1) - 2(a-1)] = (a+1)(3-a) < 0 \)
+  </div>
+  <p>解不等式 \((a+1)(3-a) < 0 \implies (a+1)(a-3) > 0\)，解得 \(a > 3\) 或 \(a < -1\)。</p>
+  <p>我们需要同时满足 Case 2 的两个条件，取交集：(\(a > 1\) 或 \(a < -1\)) \(\cap\) (\(a > 3\) 或 \(a < -1\))，得到 \(a > 3\) 或 \(a < -1\)。</p>
+  <p>综合 Case 1 和 Case 2，将解集合并 (\(a=-1\) \(\cup\) (\(a > 3\) 或 \(a < -1\)))，得到最终范围。</p>
+  <p><strong>【答案】</strong>\( (-\infty, -1] \cup (3, +\infty) \)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第6题</h3>
+  <p><strong>【原题】</strong>已知关于 \(x\) 的一元二次方程 \(2x^2 + px + p = 0\) 的两个实根分别为 \(\alpha, \beta\)，且 \(\alpha^2 + \beta^2 = 3\)，则实数 \(p = \_\_\_\_\_\_ \)。</p>
+  <p><strong>【解析】</strong></p>
+  <p>根据韦达定理：</p>
+  <div class="output-box">
+    \( \alpha + \beta = -\frac{p}{2} \)<br>
+    \( \alpha\beta = \frac{p}{2} \)
+  </div>
+  <p>利用完全平方公式转换条件：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = 3 \)
+  </div>
+  <p>代入韦达定理的结果：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \left(-\frac{p}{2}\right)^2 - 2\left(\frac{p}{2}\right) = 3 \implies \frac{p^2}{4} - p = 3 \implies p^2 - 4p - 12 = 0 \)
+  </div>
+  <p>解得 \((p - 6)(p + 2) = 0\)，所以 \(p = 6\) 或 \(p = -2\)。</p>
+  <div class="notice-box">
+    <p><strong>重要</strong>：题目提到方程有<strong>两个实根</strong>，所以判别式 \(\Delta\) 必须大于等于 0。</p>
+  </div>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \Delta = p^2 - 4(2)(p) = p^2 - 8p \ge 0 \implies p(p - 8) \ge 0 \)
+  </div>
+  <p>解得 \(p \le 0\) 或 \(p \ge 8\)。现在检验我们得到的两个 \(p\) 值：</p>
+  <ul>
+    <li>当 \(p = 6\) 时，不满足 \(p \le 0\) 或 \(p \ge 8\)，<strong>舍去</strong>。</li>
+    <li>当 \(p = -2\) 时，满足 \(p \le 0\)，<strong>保留</strong>。</li>
+  </ul>
+  <p><strong>【答案】</strong>-2</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第7题</h3>
+  <p><strong>【原题】</strong>对于任意的 \(x \in [-1, 1]\)，都存在 \(b, c \in R\)，使得关于 \(x\) 的不等式 \(|ax^2 + bx + c| \le 1\) 恒成立，则实数 \(a\) 的最大值为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>这是一个关于切比雪夫多项式的经典问题。令 \(P(x) = ax^2 + bx + c\)。题目要求对于某个 \(a\)，我们可以找到 \(b\) 和 \(c\) 使得 \(|P(x)| \le 1\) 在 \([-1, 1]\) 上恒成立。我们要求 \(a\) 的最大值。</p>
+  <div class="tip-box">
+    <p><strong>核心思想</strong>：利用特殊点 \(x=1, x=-1, x=0\) 的函数值来构造一个关于 \(a\) 的表达式。</p>
+  </div>
+  <p>考虑 \(P(x)\) 在这三个点的值：</p>
+  <div class="output-box">
+  \( P(1) = a + b + c \)<br>
+  \( P(-1) = a - b + c \)<br>
+  \( P(0) = c \)
+  </div>
+  <p>根据题意，我们有 \(|P(1)| \le 1, |P(-1)| \le 1, |P(0)| \le 1\)。
+  考虑一个巧妙的组合 \(P(1) + P(-1) - 2P(0)\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( P(1) + P(-1) - 2P(0) = (a+b+c) + (a-b+c) - 2c = 2a \)
+  </div>
+  <p>利用三角不等式 \(|x+y| \le |x|+|y|\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( |2a| = |P(1) + P(-1) - 2P(0)| \le |P(1)| + |P(-1)| + |-2P(0)| \le 1 + 1 + 2|P(0)| \le 1 + 1 + 2(1) = 4 \)
+  </div>
+  <p>所以 \(|2a| \le 4 \implies |a| \le 2\)。这说明 \(a\) 的最大值不可能超过 2。</p>
+  <p>现在我们验证 \(a=2\) 是否可行。如果 \(a=2\)，我们能否找到 \(b, c\) 使得 \(|2x^2 + bx + c| \le 1\) 在 \([-1, 1]\) 上恒成立？
+  考虑著名的<strong>切比雪夫多项式</strong> \(T_2(x) = 2x^2 - 1\)。
+  令 \(b=0, c=-1\)，则 \(P(x) = 2x^2 - 1\)。
+  当 \(x \in [-1, 1]\) 时，\(x^2 \in [0, 1]\)，所以 \(2x^2 \in [0, 2]\)，因此 \(2x^2 - 1 \in [-1, 1]\)。
+  所以 \(|2x^2 - 1| \le 1\) 在 \([-1, 1]\) 上恒成立。这说明 \(a=2\) 是可以取到的。</p>
+  <p><strong>【答案】</strong>2</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第8题</h3>
+  <p><strong>【原题】</strong>若关于 \(x\) 的不等式 \(\frac{x + a}{x^2 + 4x + b} \ge 0\) 的解集是 \((c - a, -2] \cup (c + a, +\infty)\)，则 \(b\) 的值是 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>分析解集 \((c - a, -2] \cup (c + a, +\infty)\)：</p>
+  <ol>
+    <li>不等式包含等号，而解集的端点 \(-2\) 是闭区间，说明 \(x=-2\) 使得表达式为0，且分母不为0。</li>
+    <li>表达式为0，意味着分子 \(x+a=0\)。将 \(x=-2\) 代入，得到 \(-2+a=0\)，解得 <strong>\(a=2\)</strong>。</li>
+    <li>解集的另外两个端点 \(c-a\) 和 \(c+a\) 是开区间，说明它们是分母的根。</li>
+  </ol>
+  <p>所以，方程 \(x^2+4x+b=0\) 的两个根是 \(c-a\) 和 \(c+a\)。根据韦达定理：</p>
+  <ul>
+    <li>两根之和：\((c-a) + (c+a) = -4 \implies 2c = -4 \implies c = -2\)。</li>
+    <li>两根之积：\((c-a)(c+a) = b \implies c^2 - a^2 = b\)。</li>
+  </ul>
+  <p>将 \(a=2, c=-2\) 代入第二式：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( b = c^2 - a^2 = (-2)^2 - 2^2 = 4 - 4 = 0 \)
+  </div>
+  <p><strong>【答案】</strong>0</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第9题</h3>
+  <p><strong>【原题】</strong>已知 \(a > 0\)，\(b > 0\)，且 \(\frac{1}{a} + \frac{4}{b} = 1\)，则 \(\frac{1}{a - 1} + \frac{9}{b}\) 的最小值为 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>从约束条件 \(\frac{1}{a} + \frac{4}{b} = 1\) 入手，进行变量代换。
+  \(\frac{1}{a} = 1 - \frac{4}{b} = \frac{b-4}{b} \implies a = \frac{b}{b-4}\)。
+  因为 \(a > 0\) 且 \(b > 0\)，所以 \(b-4\) 必须大于0，即 \(b > 4\)。
+  同时，\(\frac{1}{a} = 1 - \frac{4}{b} < 1\)，所以 \(a > 1\)，这意味着 \(a-1 > 0\)。
+  现在我们将 \(a\) 代入要求最小值的表达式 \(S = \frac{1}{a-1} + \frac{9}{b}\)。
+  首先计算 \(a-1\)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( a - 1 = \frac{b}{b-4} - 1 = \frac{b - (b-4)}{b-4} = \frac{4}{b-4} \)
+  </div>
+  <p>所以 \(\frac{1}{a-1} = \frac{b-4}{4}\)。表达式变为：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( S = \frac{b-4}{4} + \frac{9}{b} = \frac{b}{4} - 1 + \frac{9}{b} = \left(\frac{b}{4} + \frac{9}{b}\right) - 1 \)
+  </div>
+  <p>因为 \(b > 4 > 0\)，我们可以对括号内的部分使用基本不等式：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( \frac{b}{4} + \frac{9}{b} \ge 2\sqrt{\frac{b}{4} \cdot \frac{9}{b}} = 2\sqrt{\frac{9}{4}} = 2 \cdot \frac{3}{2} = 3 \)
+  </div>
+  <p>当且仅当 \(\frac{b}{4} = \frac{9}{b}\)，即 \(b^2 = 36\)。因为 \(b>0\)，所以 \(b = 6\)。\(b=6\) 满足 \(b>4\) 的条件。
+  所以 \(S \ge 3 - 1 = 2\)。\(S\) 的最小值为2。</p>
+  <p><strong>【答案】</strong>2</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第10题</h3>
+  <p><strong>【原题】</strong>已知二次函数 \(y = (ax - 1)(x - a)\)，甲同学：\(y > 0\) 的解集为 \((-\infty, a) \cup (\frac{1}{a}, +\infty)\)；乙同学：\(y < 0\) 的解集为 \((-\infty, a) \cup (\frac{1}{a}, +\infty)\)；丙同学：此二次函数的对称轴在 y 轴左侧。在这三个同学的论述中，只有一个论述是错误的，则 \(a\) 的取值范围是 ______。</p>
+  <p><strong>【解析】</strong></p>
+  <p>二次函数为 \(y = ax^2 - (a^2+1)x + a\)，两根为 \(x=a\) 和 \(x=\frac{1}{a}\)。</p>
+  <p><strong>分析三个论述成立的条件：</strong>
+  <ul>
+    <li><strong>甲同学为真</strong>: \(y>0\) 的解集在两根之外，说明开口向上 (\(a>0\)) 且 \(a\) 是较小的根 (\(a < \frac{1}{a} \implies a^2 < 1 \implies -1 < a < 1\))。取交集得 <strong>\(0 < a < 1\)</strong>。</li>
+    <li><strong>乙同学为真</strong>: \(y<0\) 的解集在两根之外，说明开口向下 (\(a<0\)) 且 \(a\) 是较小的根 (\(a < \frac{1}{a} \implies a^2 > 1 \implies a>1\) 或 \(a<-1\))。取交集得 <strong>\(a < -1\)</strong>。</li>
+    <li><strong>丙同学为真</strong>: 对称轴 \(x = \frac{a^2+1}{2a} < 0\)。因分子 \(a^2+1>0\)，所以必须分母 \(2a < 0\)，即 <strong>\(a < 0\)</strong>。</li>
+  </ul>
+  </p>
+  <div class="tip-box">
+    <p>处理边界情况：当 \(a=1\) 或 \(a=-1\) 时，两根重合，解集形式不符，故不考虑。</p>
+  </div>
+  <p><strong>逻辑分析</strong>：只有一个论述是错误的，意味着有两个论述是正确的。我们分段讨论 \(a\) 的范围：</p>
+  <ul>
+    <li>当 <strong>\(a < -1\)</strong> 时：甲假 (\(a \not\in (0,1)\))，乙真 (\(a<-1\))，丙真 (\(a<0\))。<strong>符合“一假两真”</strong>。</li>
+    <li>当 \(-1 \le a \le 0\) 时：甲假，乙假，丙在 \(a<0\) 时真。不符合“一假两真”。</li>
+    <li>当 \(a > 0\) 时: 丙假，乙假。不符合。</li>
+  </ul>
+  <p>综上，满足条件的 \(a\) 的范围是 \(a < -1\)。如果考虑边界 \(a=-1\)，乙真，丙真，甲假，也符合。故范围是 \(a \le -1\)。</p>
+  <p><strong>【答案】</strong>\( (-\infty, -1] \)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第11题</h3>
+  <p><strong>【原题】</strong>已知两个正数的算术平均值大于等于它们的几何平均值，类比此定理，有以下结论：三个正数的算术平均数大于等于它们的几何平均数，即当 a, b, c 为正实数时，\(\frac{a + b + c}{3} \ge \sqrt[3]{abc}\)，当且仅当 a = b = c 时等号成立；利用上述结论，判断下列命题真假：则真命题为（ ）</p>
+  <p><strong>【解析】</strong></p>
+  <ul>
+    <li><strong>A. 若 \(0 < x < 1\)，则 \(x^2(1-x) \le \frac{1}{9}\)</strong><br>
+    考虑三个正数 \(\frac{x}{2}, \frac{x}{2}, 1-x\)。它们的和为1。
+    <div class="output-box" style="white-space: nowrap;">\( \frac{\frac{x}{2}+\frac{x}{2}+(1-x)}{3} \ge \sqrt[3]{\frac{x}{2} \cdot \frac{x}{2} \cdot (1-x)} \implies \frac{1}{3} \ge \sqrt[3]{\frac{x^2(1-x)}{4}} \)</div>
+    立方得 \(\frac{1}{27} \ge \frac{x^2(1-x)}{4} \implies x^2(1-x) \le \frac{4}{27}\)。因为 \(\frac{4}{27} > \frac{1}{9} = \frac{3}{27}\)，所以原命题是假的。</li>
+    <li><strong>B. 若 \(x > 0\)，则 \(2x + \frac{1}{x^2} \ge \frac{27}{8}\)</strong><br>
+    考虑三个正数 \(x, x, \frac{1}{x^2}\)。
+    <div class="output-box" style="white-space: nowrap;">\( 2x + \frac{1}{x^2} = x + x + \frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
+    因为 \(3 = \frac{24}{8} < \frac{27}{8}\)，所以原命题是假的。</li>
+    <li><strong>C. 若 \(0 < x < 1\)，则 \(x^2(1-x) \ge \frac{1}{9}\)</strong><br>
+    由A的分析，\(x^2(1-x)\) 的最大值为 \(\frac{4}{27}\)，可以取到比 \(\frac{1}{9}\) 小的值，所以C是假的。</li>
+    <li><strong>D. 若 \(x > 0\)，则 \(x^2 + \frac{2}{x} \ge 3\)</strong><br>
+    考虑三个正数 \(x^2, \frac{1}{x}, \frac{1}{x}\)。
+    <div class="output-box" style="white-space: nowrap;">\( x^2 + \frac{2}{x} = x^2 + \frac{1}{x} + \frac{1}{x} \ge 3\sqrt[3]{x^2 \cdot \frac{1}{x} \cdot \frac{1}{x}} = 3\sqrt[3]{1} = 3 \)</div>
+    等号在 \(x^2 = \frac{1}{x}\)，即 \(x=1\) 时成立。所以D是真的。</li>
+  </ul>
+  <p><strong>【答案】</strong>D</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第12题</h3>
+  <p><strong>【原题】</strong>设 \(0 < b < a + 1\)，若关于 \(x\) 的不等式 \((x-b)^2 > (ax)^2\) 的解集中的整数解个数恰为 3 个，则满足条件的实数 \(a\) 所在区间可以是（ ）</p>
+  <p><strong>【解析】</strong></p>
+  <p>移项并使用平方差公式：\((x-b - ax)(x-b + ax) > 0 \implies [(1-a)x-b][(1+a)x-b] > 0\)。
+  解集中的整数解是有限的（3个），说明解集是一个<strong>有限开区间</strong>。这要求抛物线开口向下，即二次项系数 \( (1-a)(1+a) = 1-a^2 < 0 \)。
+  解得 \(a^2 > 1\)，即 \(a > 1\) 或 \(a < -1\)。
+  我们先考虑 <strong>\(a > 1\)</strong> 的情况。此时 \(1-a<0, 1+a>0\)。
+  不等式的两根为 \(x_1 = \frac{b}{1-a}\) 和 \(x_2 = \frac{b}{1+a}\)。
+  因为 \(a>1\)，所以 \(x_1\) 是负数，\(x_2\) 是正数。解集为 \((x_1, x_2)\)。
+  分析右端点 \(x_2\)。由 \(0 < b < a+1\)，两边同除以 \(a+1\) 得 \(0 < \frac{b}{a+1} < 1\)，即 \(0 < x_2 < 1\)。
+  由于解集是 \((x_1, x_2)\) 且 \(0 < x_2 < 1\)，要包含3个整数，这3个整数必须是 <strong>0, -1, -2</strong>。
+  这要求区间的左端点 \(x_1\) 必须满足：\(-3 \le x_1 < -2\)。
+  </p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( -3 \le \frac{b}{1-a} < -2 \)
+  </div>
+  <p>因为 \(1-a\) 是负数，不等式两边同乘 \(1-a\) 并<strong>反向</strong>：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( -3(1-a) \ge b > -2(1-a) \implies 3a-3 \ge b > 2a-2 \)
+  </div>
+  <p>我们要找的 \(b\) 必须同时满足 \(0 < b < a+1\) 和 \(2a-2 < b \le 3a-3\)。要存在这样的 \(b\)，两个区间 \((2a-2, 3a-3]\) 和 \((0, a+1)\) 的交集必须非空。
+  这要求 \(2a-2 < a+1\)，解得 \(a < 3\)。
+  同时 \(3a-3 > 0\)，解得 \(a > 1\)。
+  结合 \(a > 1\)，可得 \(a\) 的范围是 \((1, 3)\)。</p>
+  <p><strong>【答案】</strong>C</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第13题</h3>
+  <p><strong>【原题】</strong>已知 \(x, y \in R^+\)，判断下列命题的真假。</p>
+  <p><strong>【解析】</strong></p>
+  <ul>
+    <li><strong>① 若 \(x + y = 1\)，则 \(\frac{1}{x} + \frac{x}{y}\) 的最小值为 \(\frac{5}{2}\)</strong><br>
+    令 \(y=1-x\)，则 \(0 < x < 1\)。表达式 \(E = \frac{1}{x} + \frac{x}{1-x}\)。求导 \(E' = -\frac{1}{x^2} + \frac{1}{(1-x)^2}\)。令 \(E'=0\) 得 \(x=\frac{1}{2}\)。此时 \(E_{min} = \frac{1}{1/2} + \frac{1/2}{1/2} = 2+1=3\)。命题错误。</li>
+
+    <li><strong>② 若 \(x + 3y = xy\)，则 \(x + y\) 的最小值为 \(4 + 2\sqrt{3}\)</strong><br>
+    两边同除以 \(xy\) 得 \(\frac{1}{y} + \frac{3}{x} = 1\)。
+    <div class="output-box" style="white-space: nowrap;">\( x+y = (x+y)\left(\frac{1}{y} + \frac{3}{x}\right) = \frac{x}{y} + 1 + 3 + \frac{3y}{x} = 4 + \left(\frac{x}{y} + \frac{3y}{x}\right) \ge 4 + 2\sqrt{\frac{x}{y} \cdot \frac{3y}{x}} = 4 + 2\sqrt{3} \)</div>
+    命题正确。</li>
+
+    <li><strong>③ 若 \(x + 2y + xy = 4\)，则 \(x + 2y\) 的最小值为 \(4\sqrt{3} - 4\)</strong><br>
+    令 \(S = x+2y\)，则 \(xy = 4-S\)。由基本不等式 \((x+2y)^2 \ge 4x(2y) = 8xy\)。
+    <div class="output-box" style="white-space: nowrap;">\( S^2 \ge 8(4-S) \implies S^2+8S-32 \ge 0 \)</div>
+    解关于 \(S\) 的不等式，由于 \(S>0\)，解得 \(S \ge \frac{-8 + \sqrt{64 - 4(1)(-32)}}{2} = \frac{-8 + \sqrt{192}}{2} = -4 + 4\sqrt{3}\)。命题正确。</li>
+
+    <li><strong>④ \(\frac{2x}{3x + 2y} + \frac{2y}{x + 3y}\) 的最大值为 \(\frac{12 - 3\sqrt{2}}{7}\)</strong><br>
+    令 \(E\) 为原式。换元 \(u=3x+2y, v=x+3y\)。可以解出 \(x=\frac{3u-2v}{7}, y=\frac{3v-u}{7}\)。
+    <div class="output-box" style="white-space: nowrap;">\( E = \frac{2x}{u} + \frac{2y}{v} = \frac{2(3u-2v)}{7u} + \frac{2(3v-u)}{7v} = \frac{6}{7} - \frac{4v}{7u} + \frac{6}{7} - \frac{2u}{7v} = \frac{12}{7} - \frac{1}{7}\left(\frac{4v}{u} + \frac{2u}{v}\right) \)</div>
+    <div class="output-box" style="white-space: nowrap;">\( E \le \frac{12}{7} - \frac{1}{7} \cdot 2\sqrt{\frac{4v}{u} \cdot \frac{2u}{v}} = \frac{12}{7} - \frac{2\sqrt{8}}{7} = \frac{12-4\sqrt{2}}{7} \)</div>
+    命题错误。</li>
+  </ul>
+  <p>正确的命题是 ② 和 ③。</p>
+  <p><strong>【答案】</strong>D</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第14题</h3>
+  <p><strong>【原题】</strong>已知关于 \(x\) 的不等式组 \(\begin{cases} x^2 - 2x - 15 \ge 0 \\ 2x^2 + (2k + 9)x + 9k < 0 \end{cases}\) 仅有一个整数解，则 \(k\) 的取值范围为（ ）</p>
+  <p><strong>【解析】</strong></p>
+  <ol>
+    <li>解第一个不等式：\((x-5)(x+3) \ge 0 \implies x \in (-\infty, -3] \cup [5, +\infty)\)。整数解集为 \(\{\dots, -5, -4, -3\} \cup \{5, 6, 7, \dots\}\)。</li>
+    <li>解第二个不等式：因式分解得 \((2x+9)(x+k) < 0\)。两根为 \(-\frac{9}{2} = -4.5\) 和 \(-k\)。</li>
+    <li><strong>Case 1: \(-k > -4.5\) (即 \(k < 4.5\))</strong><br>
+    第二个不等式的解集为 \((-4.5, -k)\)。要使不等式组只有一个整数解，这个解必须来自第一个不等式的解集。
+    在 \((-4.5, -k)\) 范围内的整数，且满足第一个不等式的，只有 \(-3, -4, \dots\)。
+    要只有一个整数解，该解只能是 \(-3\)。
+    所以 \(-3\) 必须在区间内，而 \(-2\) 和 \(-4\) 不在（-4本身就不在区间内）。
+    这要求 \( -3 < -k \le -2 \implies 2 \le k < 3\)。(此处题目解析有误，应为-3在区间内，-2不在)
+    <div class="tip-box"><p>修正：整数解只能是-3，则 \(-3 \in (-4.5, -k)\) 且 \(-2 \notin (-4.5, -k)\)。
+    这要求 \(-k > -3\)，即 \(k < 3\)。且 \(-k \le -2\) 不成立，即 \(-k > -2\)，\(k<2\)。
+    结合 \(-4 < -k \le -3 \implies 3 \le k < 4\)。
+    </p></div>
+    </li>
+    <li><strong>Case 2: \(-k < -4.5\) (即 \(k > 4.5\))</strong><br>
+    第二个不等式的解集为 \((-k, -4.5)\)。要只有一个整数解，该解只能是 \(-5\)。
+    这要求 \(-5\) 在区间内，而 \(-6\) 不在。
+    即 \(-6 \le -k < -5 \implies 5 < k \le 6\)。</li>
+  </ol>
+  <p>合并两种情况，\(k\) 的取值范围是 \([3, 4) \cup (5, 6]\)。</p>
+  <p><strong>【答案】</strong>C</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第15题</h3>
+  <p><strong>【原题】</strong>已知关于 \(x\) 的不等式 \(mx^2 + nx + 2024 > 0\)，下列结论正确的是（ ）</p>
+  <p><strong>【解析】</strong></p>
+  <ul>
+    <li><strong>A. 不等式 \(mx^2 + nx + 2024 > 0\) 的解集不可以是 R；</strong><br>
+    错误。若 \(m=1, n=0\)，不等式为 \(x^2+2024>0\)，其解集就是 R。</li>
+    <li><strong>B. 不等式 \(mx^2 + nx + 2024 > 0\) 的解集可以是 \(\emptyset\)；</strong><br>
+    错误。令 \(x=0\)，不等式变为 \(2024 > 0\)，这是一个恒成立的真命题。所以 \(x=0\) 永远是不等式的一个解，因此解集不可能是空集 \(\emptyset\)。</li>
+    <li><strong>C. 不等式 \(mx^2 + nx + 2024 > 0\) 的解集可以是 \(\{x | x < 2024\}\)；</strong><br>
+    正确。当该不等式为一元一次不等式时，即 \(m=0\)，原不等式为 \(nx+2024>0\)。若我们取 \(n=-1\)，则不等式为 \(-x+2024>0\)，解得 \(x < 2024\)。这说明该解集是可能存在的。</li>
+    <li><strong>D. 不等式 \(mx^2 + nx + 2024 > 0\) 的解集可以是 \((1, 2024)\)。</strong><br>
+    错误。若解集为 \((1, 2024)\)，则抛物线开口向下 (\(m<0\)) 且 1 和 2024 是方程 \(mx^2+nx+2024=0\) 的两个根。由韦达定理，两根之积为 \(1 \times 2024 = \frac{2024}{m}\)，推出 \(m=1\)。这与 \(m<0\) 矛盾。</li>
+  </ul>
+  <p><strong>【答案】</strong>C</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第16题</h3>
+  <p><strong>【原题】</strong>(1) 已知a、b是正实数，且a+b=1，求\(\frac{1}{2a+b} + \frac{4}{b+2}\)的最小值。(2) ①...求证... ②求代数式 \(M = \sqrt{4m-6} - \sqrt{m-3}\) 的最小值...</p>
+  <p><strong>【解析】</strong></p>
+  <h4>(1) 求最小值</h4>
+  <p>我们注意到分母之和 \((2a+b) + (b+2) = 2a+2b+2 = 2(a+b)+2 = 2(1)+2 = 4\)。可以使用“乘常数法”：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( E = \frac{1}{4} \left( \frac{1}{2a+b} + \frac{4}{b+2} \right) \cdot 4 = \frac{1}{4} \left( \frac{1}{2a+b} + \frac{4}{b+2} \right) ((2a+b) + (b+2)) \)
+  </div>
+  <p>展开得：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( E = \frac{1}{4} \left[ 1 + \frac{b+2}{2a+b} + \frac{4(2a+b)}{b+2} + 4 \right] = \frac{1}{4} \left[ 5 + \left( \frac{b+2}{2a+b} + \frac{4(2a+b)}{b+2} \right) \right] \)
+  </div>
+  <p>对括号内使用基本不等式：\(\dots \ge 2\sqrt{\frac{b+2}{2a+b} \cdot \frac{4(2a+b)}{b+2}} = 2\sqrt{4} = 4\)。</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( E_{min} = \frac{1}{4} [5+4] = \frac{9}{4} \)
+  </div>
+  <h4>(2) ① 证明</h4>
+  <p>设 \(x-y=k\), 则 \(x=y+k\)。代入双曲线方程 \( \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \)：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( \frac{(y+k)^2}{a^2} - \frac{y^2}{b^2} = 1 \implies b^2(y+k)^2 - a^2y^2 = a^2b^2 \)
+  </div>
+  <p>整理成关于 \(y\) 的二次方程：\((b^2-a^2)y^2 + (2b^2k)y + (b^2k^2-a^2b^2) = 0\)。因为 \(y\) 有实数解，判别式 \(\Delta \ge 0\)。</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( \Delta = (2b^2k)^2 - 4(b^2-a^2)(b^2k^2-a^2b^2) \ge 0 \)
+  </div>
+  <p>化简得 \(a^2b^4 + a^2b^2k^2 - a^4b^2 \ge 0\)。两边同除以正数 \(a^2b^2\) 得 \(b^2 + k^2 - a^2 \ge 0\)，即 \(k^2 \ge a^2 - b^2\)。所以 \((x-y)^2 \ge a^2-b^2\)。</p>
+  <h4>(2) ② 求最小值</h4>
+  <p>定义域要求 \(4m-6 \ge 0\) 且 \(m-3 \ge 0\)，解得 \(m \ge 3\)。对 \(M(m)\) 求导：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( M'(m) = \frac{1}{2\sqrt{4m-6}} \cdot 4 - \frac{1}{2\sqrt{m-3}} = \frac{2}{\sqrt{4m-6}} - \frac{1}{2\sqrt{m-3}} \)
+  </div>
+  <p>令 \(M'(m)=0\) 解得 \(4\sqrt{m-3} = \sqrt{4m-6} \implies 16(m-3) = 4m-6 \implies m = \frac{7}{2}\)。
+  分析单调性可知 \(m=\frac{7}{2}\) 是最小值点。</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( M_{min} = \sqrt{4(\frac{7}{2})-6} - \sqrt{\frac{7}{2}-3} = \sqrt{8} - \sqrt{\frac{1}{2}} = 2\sqrt{2} - \frac{\sqrt{2}}{2} = \frac{3\sqrt{2}}{2} \)
+  </div>
+  <p><strong>【答案】</strong>(1) \(\frac{9}{4}\) (2) ② 最小值为 \(\frac{3\sqrt{2}}{2}\)，此时 \(m = \frac{7}{2}\)。</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第17题</h3>
+  <p><strong>【原题】</strong>已知函数f(x) = ax^2 + 4x + b (a < 0, a, b ∈ R)...</p>
+  <p><strong>【解析】</strong></p>
+  <h4>(1) 求不等式解集</h4>
+  <p>不等式 \(f(x) < 0\) 的解集是 \((-\infty, -3) \cup (5, +\infty)\)，因为 \(a<0\)，这说明 \(-3, 5\) 是方程 \(ax^2+4x+b=0\) 的两个根。
+  由韦达定理：</p>
+  <div class="output-box">
+  \( -3+5 = -\frac{4}{a} \implies a=-2 \)<br>
+  \( (-3) \times 5 = \frac{b}{a} \implies b = -15a = 30 \)
+  </div>
+  <p>所求不等式为 \(bx^2 - ax - 4 < 0\)，即 \(30x^2 - (-2)x - 4 < 0 \implies 15x^2 + x - 2 < 0\)。
+  因式分解得 \((3x-1)(5x+2) < 0\)。解集在两根之间。</p>
+  <p>解集为 \((-\frac{2}{5}, \frac{1}{3})\)。</p>
+  <h4>(2) 求f(x)解析式</h4>
+  <p>\(\alpha, \beta\) 是 \(f(x) = x\)，即 \(ax^2 + 3x + b = 0\) 的根。由 \(|\alpha - \beta| = 1\)，平方得 \((\alpha-\beta)^2=1\)。</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( (\alpha+\beta)^2 - 4\alpha\beta = 1 \implies (-\frac{3}{a})^2 - 4(\frac{b}{a}) = 1 \implies \frac{9}{a^2} - \frac{4b}{a} = 1 \)
+  </div>
+  <p>两边同乘 \(a^2\) 得 \(9 - 4ab = a^2 \implies a^2 + 4ab = 9 \implies a(a+4b)=9\)。
+  因\(a,b\)是负整数，\(a\) 只能是-1, -3, -9。
+  <ul>
+    <li>若 \(a=-1\)，则 \(-1(-1+4b)=9 \implies -1+4b=-9 \implies 4b=-8 \implies b=-2\)。符合条件。</li>
+    <li>若 \(a=-3\)，则 \(-3(-3+4b)=9 \implies -3+4b=-3 \implies b=0\)。不符。</li>
+    <li>若 \(a=-9\)，则 \(-9(-9+4b)=9 \implies -9+4b=-1 \implies 4b=8 \implies b=2\)。不符。</li>
+  </ul>
+  <p>所以 \(f(x) = -x^2 + 4x - 2\)。</p>
+  <h4>(3) 证明</h4>
+  <p>令 \(g(x)=ax^2+3x+b\)。\(\alpha < 1 < \beta < 2\) 意味着 \(g(1)>0, g(2)<0\)。
+  <div class="output-box">
+  \( g(1)=a+3+b>0 \implies a+b>-3 \)<br>
+  \( g(2)=4a+6+b<0 \implies 4a+b<-6 \)
+  </div>
+  <p>要证 \((x_1 + 1)(x_2 + 1) < 7\)，即 \(x_1x_2 + (x_1+x_2) + 1 < 7\)。</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( \frac{b}{a} - \frac{4}{a} + 1 < 7 \implies \frac{b-4}{a} < 6 \)
+  </div>
+  <p>因为 \(a<0\)，所以等价于证明 \(b-4 > 6a \implies b-6a > 4\)。
+  由 \(b > -a-3\)，可得 \(b-6a > -a-3-6a = -7a-3\)。
+  我们只需证 \(-7a-3 > 4 \implies -7a > 7 \implies a < -1\)。
+  由 \(g(1)>0, g(2)<0\), 两式相减得 \((4a+b)-(a+b) < -6- (-3) \implies 3a < -3 \implies a < -1\)。
+  条件成立，故得证。</p>
+  <p><strong>【答案】</strong>(1) \((-\frac{2}{5}, \frac{1}{3})\) (2) \(f(x) = -x^2 + 4x - 2\) (3) 证明略</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第18题</h3>
+  <p><strong>【原题】</strong>已知二次函数f(x)=x^2-(3-t)x+2+t...</p>
+  <p><strong>【解析】</strong></p>
+  <h4>(1) 求t的值</h4>
+  <p>由韦达定理 \(x_1+x_2=3-t, x_1x_2=2+t\)。代入条件 \((x_1+x_2)x_1x_2=-6\) 得：
+  \((3-t)(2+t)=-6 \implies -t^2+t+6=-6 \implies t^2-t-12=0\)。
+  解得 \((t-4)(t+3)=0\)，所以 \(t=4\) 或 \(t=-3\)。
+  方程有实根，需满足 \(\Delta = (3-t)^2 - 4(2+t) = t^2-10t+1 \ge 0\)。
+  <ul>
+    <li>当 \(t=4\) 时，\(\Delta = 16-40+1 < 0\)，舍去。</li>
+    <li>当 \(t=-3\) 时，\(\Delta = 9+30+1 > 0\)，符合。</li>
+  </ul>
+  所以 \(t=-3\)。</p>
+  <h4>(2) 求t的取值范围</h4>
+  <p>对任意 \(x\in[0,+∞)\) 都有 \(f(x)>0\) 成立。
+  <ul>
+    <li>Case 1: \(\Delta < 0\)。抛物线恒在x轴上方，对所有x成立，自然对 \(x\ge 0\) 成立。
+    \(\Delta = t^2-10t+1 < 0 \implies 5-2\sqrt{6} < t < 5+2\sqrt{6}\)。</li>
+    <li>Case 2: \(\Delta \ge 0\)。需满足对称轴 \(x_0 = \frac{3-t}{2} < 0\) 且 \(f(0)>0\)。
+    \(x_0 < 0 \implies 3-t < 0 \implies t>3\)。
+    \(f(0) = 2+t > 0 \implies t>-2\)。
+    \(\Delta \ge 0 \implies t \le 5-2\sqrt{6}\) 或 \(t \ge 5+2\sqrt{6}\)。
+    取交集得 \(t \ge 5+2\sqrt{6}\)。</li>
+  </ul>
+  取两种情况的并集，得到 \(t > 5-2\sqrt{6}\)。</p>
+  <h4>(3) 求t的取值范围</h4>
+  <p>方程 \(f(x)=0\) 在 \([0,2]\) 上有且仅有一个实数根。
+  <ul>
+    <li><strong>Case 1: 两根异号</strong>，且仅有一根在[0,2]内。即 \(f(0)\) 和 \(f(2)\) 异号。
+    \(f(0)f(2) < 0 \implies (2+t)(4 - 2(3-t)+2+t) < 0 \implies (2+t)(3t) < 0 \implies -2 < t < 0\)。</li>
+    <li><strong>Case 2: 有一根为0</strong>。\(f(0)=0 \implies t=-2\)。此时另一根为 \(3-t=5\)，不在\((0,2]\)内，符合。所以 \(t=-2\) 成立。</li>
+    <li><strong>Case 3: 有一根为2</strong>。\(f(2)=0 \implies t=0\)。此时另一根为 \(3-t=1\)，在\([0,2)\)内，有两根，不符。</li>
+    <li><strong>Case 4: 有重根且根在[0,2]内</strong>。\(\Delta=0 \implies t=5\pm2\sqrt{6}\)。
+    当 \(t=5-2\sqrt{6}\)时，重根为 \(x = \frac{3-t}{2} = \frac{3-(5-2\sqrt{6})}{2} = \sqrt{6}-1 \approx 1.45 \in [0,2]\)。符合。
+    当 \(t=5+2\sqrt{6}\)时，根为 \(x = \frac{3-t}{2} < 0\)，不符。</li>
+  </ul>
+  合并所有情况得 \(t \in [-2,0) \cup \{5-2\sqrt{6}\}\)。</p>
+  <p><strong>【答案】</strong>(1) \(t=-3\) (2) \((5 - 2\sqrt{6}, +\infty)\) (3) \([-2, 0) \cup \{5 - 2\sqrt{6}\}\)</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第19题</h3>
+  <p><strong>【原题】</strong>已知a=x^2-x+1/(3x^2)，b=x+1/(3x^2)-1，c=-x-2/(3x^2)+2。</p>
+  <p><strong>【解析】</strong></p>
+  <h4>(1) 证明</h4>
+  <p>计算三者之和：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( a+b+c = (x^2-x+\frac{1}{3x^2}) + (x+\frac{1}{3x^2}-1) + (-x-\frac{2}{3x^2}+2) = x^2-x+1 \)
+  </div>
+  <p>对结果配方：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \( a+b+c = (x-\frac{1}{2})^2 - \frac{1}{4} + 1 = (x-\frac{1}{2})^2 + \frac{3}{4} \ge \frac{3}{4} \)
+  </div>
+  <p><strong>反证法</strong>：假设 a、b、c 都小于 \(\frac{1}{4}\)，即 \(a < \frac{1}{4}, b < \frac{1}{4}, c < \frac{1}{4}\)。
+  那么它们的和 \(a+b+c < \frac{1}{4} + \frac{1}{4} + \frac{1}{4} = \frac{3}{4}\)。
+  这与我们计算出的 \(a+b+c \ge \frac{3}{4}\) 相矛盾。
+  因此，假设不成立，a、b、c 至少有一个不小于 \(\frac{1}{4}\)。</p>
+  <h4>(2) 比较大小</h4>
+  <p>作差比较：</p>
+  <ul>
+    <li><strong>a 与 b:</strong>
+    <div class="output-box" style="white-space: nowrap;">\( a - b = (x^2-x+\frac{1}{3x^2}) - (x+\frac{1}{3x^2}-1) = x^2-2x+1 = (x-1)^2 \ge 0 \)</div>
+    所以 \(a \ge b\)。</li>
+    <li><strong>b 与 c:</strong>
+    <div class="output-box" style="white-space: nowrap;">\( b - c = (x+\frac{1}{3x^2}-1) - (-x-\frac{2}{3x^2}+2) = 2x + \frac{1}{x^2} - 3 \)</div>
+    利用三元均值不等式：
+    <div class="output-box" style="white-space: nowrap;">\( 2x+\frac{1}{x^2} = x+x+\frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
+    所以 \(b-c = 2x + \frac{1}{x^2} - 3 \ge 0\)，即 \(b \ge c\)。</li>
+  </ul>
+  <p>综上，我们有 \(a \ge b \ge c\)。等号在 \(x-1=0\) 和 \(x=1/x^2\) 时同时成立，即 \(x=1\) 时成立。
+  所以，当 \(x=1\) 时，\(a=b=c\)；当 \(x>0\) 且 \(x \ne 1\) 时，\(a > b > c\)。</p>
+  <p><strong>【答案】</strong>(2) 当x=1时，a=b=c；当x>0且x≠1时，a > b > c。</p>
+
+  <hr style="margin: 2rem 0;">
+
+  <h3>第20题</h3>
+  <p><strong>【原题】</strong>已知m∈R，关于x的不等式(m+1)x^2-mx+m-1>0。</p>
+  <p><strong>【解析】</strong></p>
+  <h4>(1) 解集为∅</h4>
+  <p>解集为 \(\emptyset\) 等价于对一切实数 \(x\)，\((m+1)x^2-mx+m-1 \le 0\) 恒成立。
+  <ul>
+    <li>若 \(m+1=0\)，即 \(m=-1\)，不等式为 \(x-2 \le 0\)，不恒成立。</li>
+    <li>若 \(m+1 \ne 0\)，需满足抛物线开口向下且判别式\(\le 0\)。
+      <div class="output-box">
+      开口向下：\(m+1 < 0 \implies m < -1\)<br>
+      判别式：\(\Delta = (-m)^2 - 4(m+1)(m-1) = m^2 - 4(m^2-1) = 4 - 3m^2 \le 0\)
+      </div>
+      解 \(\Delta \le 0\) 得 \(m^2 \ge \frac{4}{3} \implies m \ge \frac{2}{\sqrt{3}}\) 或 \(m \le -\frac{2}{\sqrt{3}}\)。
+    </li>
+  </ul>
+  取交集 \(m < -1\) 和 \((-\infty, -\frac{2\sqrt{3}}{3}] \cup [\frac{2\sqrt{3}}{3}, +\infty)\)，得到 \(m \le -\frac{2\sqrt{3}}{3}\)。
+  </p>
+  <h4>(2) 解集为R (恒成立)</h4>
+  <p>不等式 \((m+1)x^2-mx+m-1>0\) 恒成立。
+  <ul>
+    <li>若 \(m+1=0\)，即 \(m=-1\)，不等式为 \(x-2 > 0\)，不恒成立。</li>
+    <li>若 \(m+1 \ne 0\)，需满足抛物线开口向上且判别式 \(<0\)。
+      <div class="output-box">
+      开口向上：\(m+1 > 0 \implies m > -1\)<br>
+      判别式：\(\Delta = 4 - 3m^2 < 0\)
+      </div>
+      解 \(\Delta < 0\) 得 \(m^2 > \frac{4}{3} \implies m > \frac{2}{\sqrt{3}}\) 或 \(m < -\frac{2}{\sqrt{3}}\)。
+    </li>
+  </ul>
+  取交集 \(m > -1\) 和 \((-\infty, -\frac{2\sqrt{3}}{3}) \cup (\frac{2\sqrt{3}}{3}, +\infty)\)，得到 \(m > \frac{2\sqrt{3}}{3}\)。
+  </p>
+  <p><strong>【答案】</strong>(1) \((-\infty, -\frac{2\sqrt{3}}{3}]\) (2) \((\frac{2\sqrt{3}}{3}, +\infty)\)</p>
+
+</div>
+{% endblock %}
