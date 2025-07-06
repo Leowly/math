@@ -50,9 +50,9 @@
         <li>向量 \( \mathbf{VctB} = (4, 5, 6) \)</li>
     </ul>
     <p>在计算器中进入向量模式，依次输入两个向量后，使用“向量叉积”功能（通常表示为 \( \times \) ）即可求出法向量 \( \vec{n} \)。</p>
-    <img src="{{ url_for('static', filename='images/x1_3_4_step3_1.jpg') }}" alt="计算器输入向量叉积" >
+    <img src="{{ url_for('static', filename='images/x1_3_1_step3_1.jpg') }}" alt="计算器输入向量叉积" >
     <p>按 <span class="kbd">=</span> 键后，计算器会显示叉积结果向量 \( \vec{n} \)：</p>
-    <img src="{{ url_for('static', filename='images/x1_3_4_step3_2.jpg') }}" alt="计算器显示叉积结果">
+    <img src="{{ url_for('static', filename='images/x1_3_1_step3_2.jpg') }}" alt="计算器显示叉积结果">
   </div>
 
   <h3>步骤4：使用计算器计算投影值</h3>
@@ -63,7 +63,7 @@
     <li>定义向量 <span class="kbd">VctB</span>：这是我们在步骤3中计算出的法向量 \( \vec{n} \)。</li>
     <li>在计算器中输入公式：<code>VctA · VctB ÷ Abs(VctB)</code> 然后按 <span class="kbd">=</span>。</li>
   </ol>
-  <img src="{{ url_for('static', filename='images/x1_3_4_step4_1.jpg') }}" alt="计算器输入投影公式">
+  <img src="{{ url_for('static', filename='images/x1_3_1_step4_1.jpg') }}" alt="计算器输入投影公式">
   <div class="notice-box">
     <p>这一步计算的是向量 \( \vec{AP} \) 在法向量 \( \vec{n} \) 上的投影的<strong>标量值</strong>。因为没有加最外层的绝对值，所以结果可能是负数。我们将在下一步处理符号问题。</p>
   </div>
@@ -72,12 +72,12 @@
   <p>上一步得到了一个小数，并且可能为负数。为了得到带根号的精确正值，我们使用以下技巧：</p>
   <ol>
     <li>将上一步的计算结果（Ans）储存到变量中。例如，按 <span class="kbd">STO</span> → <span class="kbd">x</span> 将结果存入变量 \( x \)。</li>
-    <img src="{{ url_for('static', filename='images/x1_3_4_step5_1.jpg') }}" alt="将结果存入变量x">
+    <img src="{{ url_for('static', filename='images/x1_3_1_step5_1.jpg') }}" alt="将结果存入变量x">
     
     <li>切换到常规的“计算”模式。</li>
     
     <li>输入表达式 \( \sqrt{x^2} \) 并按 <span class="kbd">=</span>。计算器就会显示最终的、化简过的、带根号的正确答案！</li>
-    <img src="{{ url_for('static', filename='images/x1_3_4_step5_2.jpg') }}" alt="计算x的平方根得到精确值">
+    <img src="{{ url_for('static', filename='images/x1_3_1_step5_2.jpg') }}" alt="计算x的平方根得到精确值">
   </ol>
   
   <div class="tip-box">

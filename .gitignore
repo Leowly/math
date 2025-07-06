@@ -1,5 +1,6 @@
 # 虚拟环境
 .venv
+.envrc
 
 # Python 缓存和临时文件
 __pycache__/

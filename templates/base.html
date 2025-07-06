@@ -13,6 +13,8 @@
   <!-- KaTeX 渲染脚本 -->
   <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
   <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
+  <!-- 从本地的 static 文件夹加载 -->
+  <script defer src="{{ url_for('static', filename='deployggb.js') }}"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       renderMathInElement(document.body, {
