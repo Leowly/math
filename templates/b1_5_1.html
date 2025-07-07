@@ -26,34 +26,45 @@
 
   <h3>步骤2：应用“根的分布”思想</h3>
   <p>题目条件 \( \alpha < 1 < \beta < 2 \) 告诉了我们 \( g(x)=0 \) 的两个根 \( \alpha \) 和 \( \beta \) 相对于点 1 和 2 的位置关系。</p>
-  <div id="ggb-container-1"></div>
+  
+  <div 
+  id="ggb-container-1" 
+  class="ggb-instance"
+  data-filename="{{ url_for('static', filename='ggb/b1_5_1_1_step2_1.ggb') }}"
+  data-width="500"
+  data-height="600"
+  data-showtoolbar="false"
+  data-showalgebrainput="false"
+  data-showmenubar="false"
+  data-xmin="-2"
+  data-xmax="3"
+  data-ymin="-1"
+  data-ymax="1">
+  </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var params_1 = {
-      "appName": "classic",
-      "width": "100%",
-      "height": 600,
-      "showToolBar": false,
-      "showAlgebraInput": false,
-      "showMenuBar": false,
-      "filename": "{{ url_for('static', filename='ggb/construction.ggb') }}"
-    };
-    var applet_1 = new GGBApplet(params_1, true);
-    applet_1.inject('ggb-container-1');
-  });
-  </script>
   <ul>
     <li>
       <strong>\( \alpha < 1 < \beta \)</strong> 意味着根 1 位于两根之间。由于函数 \( g(x) \) 的二次项系数 \( a<0 \) (抛物线开口向下)，函数图像在两根之间的部分位于x轴上方。因此，\( g(1) \) 必须为正数。
       <div class="output-box">
-        \[ g(1) = a(1)^2 + 3(1) + b > 0 \implies a + b + 3 > 0 \implies a + b > -3 \quad (条件①) \]
+        \[
+        \begin{aligned}
+          & g(1) = a(1)^2 + 3(1) + b > 0 \\
+          & \implies a + b + 3 > 0 \\
+          & \implies a + b > -3 \quad (条件①)
+        \end{aligned}
+        \]
       </div>
     </li>
     <li>
       <strong>\( \beta < 2 \)</strong> 意味着根 2 位于较大根 \( \beta \) 的右侧。由于抛物线开口向下，函数图像在较大根右侧的部分位于x轴下方。因此，\( g(2) \) 必须为负数。
       <div class="output-box">
-        \[ g(2) = a(2)^2 + 3(2) + b < 0 \implies 4a + b + 6 < 0 \implies 4a + b < -6 \quad (条件②) \]
+        \[
+        \begin{aligned}
+          & g(2) = a(2)^2 + 3(2) + b < 0 \\
+          & \implies 4a + b + 6 < 0 \\
+          & \implies 4a + b < -6 \quad (条件②)
+        \end{aligned}
+        \]
       </div>
     </li>
   </ul>
@@ -61,15 +72,27 @@
   <h3>步骤3：推导参数的关键性质</h3>
   <p>从条件①和②可以得到 \( b > -a - 3 \) 和 \( b < -4a - 6 \)。因此，我们有：</p>
   <div class="output-box">
-    \[ -a - 3 < -4a - 6 \implies 3a < -3 \implies \mathbf{a < -1} \]
+        \[
+        \begin{aligned}
+          & -a - 3 < -4a - 6 \\
+          & \implies 3a < -3 \\
+          & \implies a < -1
+        \end{aligned}
+        \]
   </div>
   <p>这是由根的分布推导出的一个至关重要的隐藏条件。</p>
   
   <h3>步骤4：证明目标不等式</h3>
-  <p>我们要证明 \( (x_1 + 1)(x_2 + 1) < 7 \)。其中 \( x_1, x_2 \) 是原方程 \( f(x) = ax^2 + 4x + b = 0 \) 的根。根据韦达定理，我们有 \( x_1 + x_2 = -4/a \) 和 \( x_1x_2 = b/a \)。</p>
+  <p>我们要证明 \( (x_1 + 1)(x_2 + 1) < 7 \)。其中 \( x_1, x_2 \) 是原方程 \( f(x) = ax^2 + 4x + b = 0 \) 的根。根据韦达定理，我们有 \( x_1 + x_2 = \frac{-4}{a} \) 和 \( x_1x_2 = \frac{b}{a} \)。</p>
   <p>将目标式展开并代入韦达定理：</p>
   <div class="output-box">
-    \[ (x_1 + 1)(x_2 + 1) = x_1x_2 + (x_1 + x_2) + 1 = \frac{b}{a} - \frac{4}{a} + 1 = \frac{b-4}{a} + 1 \]
+        \[
+        \begin{aligned}
+          (x_1 + 1)(x_2 + 1) &= x_1x_2 + (x_1 + x_2) + 1 \\
+          &= \frac{b}{a} - \frac{4}{a} + 1 \\
+          &= \frac{b-4}{a} + 1
+        \end{aligned}
+        \]
   </div>
   <p>所以，证明目标等价于证明 \( \frac{b-4}{a} + 1 < 7 \)，即 \( \frac{b-4}{a} < 6 \)。</p>
   <div class="notice-box">
@@ -78,7 +101,12 @@
   <p>因此，原不等式等价于证明： \( b - 4 > 6a \iff b - 6a > 4 \)。</p>
   <p>现在我们来证明 \( b - 6a > 4 \)。利用我们已有的条件 \( b > -a - 3 \)：</p>
   <div class="output-box">
-    \[ b - 6a > (-a - 3) - 6a = -7a - 3 \]
+        \[
+        \begin{aligned}
+          b - 6a &> (-a - 3) - 6a \\
+          &= -7a - 3
+        \end{aligned}
+        \]
   </div>
   <p>接下来只需证明 \( -7a - 3 > 4 \)，这等价于 \( -7a > 7 \)，即 \( a < -1 \)。这个条件正是我们在步骤3中推导出的关键性质。因此，\( b - 6a > 4 \) 成立，原命题得证。</p>
 
@@ -94,7 +122,7 @@
   </ul>
   <p>根据穿根定理，我们有 \( f(0)f(2) < 0 \)：</p>
   <div class="output-box">
-    \[ (2+t)(3t) < 0 \implies \mathbf{-2 < t < 0} \]
+    \[ (2+t)(3t) < 0 \implies -2 < t < 0 \]
   </div>
   
   <h3>情况二：根恰好是区间的端点</h3>
@@ -114,7 +142,13 @@
   <ol>
     <li><strong>判别式 \( \Delta=0 \)：</strong>
       <div class="output-box">
-        \[ \Delta = (3-t)^2 - 4(2+t) = t^2 - 10t + 1 = 0 \]
+        \[
+        \begin{aligned}
+          \Delta &= (3-t)^2 - 4(2+t) \\
+          &= t^2 - 6t + 9 - 8 - 4t \\
+          &= t^2 - 10t + 1 = 0
+        \end{aligned}
+        \]
       </div>
       <p>解得 \( t = 5 \pm 2\sqrt{6} \)。</p>
     </li>
