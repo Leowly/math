@@ -17,11 +17,11 @@ os.makedirs(BUILD_DIR, exist_ok=True)
 # ---- 覆盖 url_for ----
 def fake_url_for(endpoint, **values):
     if endpoint == "static":
-        return f"/static/{values['filename']}"
+        return f"/math/static/{values['filename']}"
     elif endpoint == "view":
-        return f"/view/{values['template']}"
+        return f"/math/view/{values['template']}"
     elif endpoint == "index":
-        return "/index.html"
+        return "/math/index.html"
     else:
         raise RuntimeError(f"Unsupported endpoint: {endpoint}")
 
