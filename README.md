@@ -1,6 +1,11 @@
 # 数学答题技巧 (Math Answering Skills)
 
 一个简洁、快速的 Web 应用，用于组织和展示数学学习笔记、解题技巧和计算器用法。本项目使用 Python Flask 作为后端，通过读取一个简单的 JSON 文件动态生成可交互的目录和内容页面。
+## 🌐 在线浏览
+
+你可以直接访问已部署的网站进行在线浏览：
+
+[点我浏览](https://leowly.github.io/math)
 
 ## ✨ 主要特性
 
@@ -17,58 +22,6 @@
 - **前端**: HTML5, CSS3, Jinja2
 - **数学公式渲染**: KaTeX
 - **依赖管理**: uv
-
-## 📍 项目状态
-
-✅ **核心功能已全部实现。**
-
-- [x] KaTeX 公式渲染
-
-## 🚀 部署与运行
-
-### 1. 环境准备
-
-- 确保你已经安装了 Python 3.10+。
-- 安装 `uv`，一个极速的 Python 包管理器 (推荐)。如果未安装，请执行：
-
-  ```bash
-  pip install uv
-  ```
-
-### 2. 安装与启动
-
-1. **克隆仓库**
-
-    ```bash
-    git clone https://github.com/Leowly/math.git
-    cd math
-    ```
-
-2. **创建虚拟环境并安装依赖**
-    使用 `uv` 可以一步到位：
-
-    ```bash
-    uv sync
-    ```
-
-    这会创建一个名为 `.venv` 的虚拟环境并安装所有 `pyproject.toml` 中定义的依赖。
-
-3. **运行开发服务器**
-    你可以直接运行 `main.py`。
-
-    ```bash
-    uv run python main.py
-    ```
-
-    启动后，在浏览器中访问 `http://127.0.0.1:6400` 即可看到网站。
-
-### 3. 生产环境部署 (可选)
-
-为了获得更好的性能和稳定性，在生产环境推荐使用 WSGI 服务器（如 Gunicorn）来运行。
-
-```bash
-uv run gunicorn --workers 4 --bind 0.0.0.0:6400 main:app
-```
 
 ## ✍️ 如何编写内容
 
