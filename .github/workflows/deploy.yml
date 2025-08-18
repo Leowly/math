@@ -24,6 +24,9 @@ jobs:
       - name: Build static site
         run: python build.py
 
+      - name: Copy static files
+        run: cp -r static build/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
