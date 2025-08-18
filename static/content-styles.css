@@ -1,11 +1,4 @@
-/*
- * content-styles.css
- * ------------------
- * 这个文件专门用于定义章节正文内部的各种内容元素的样式，
- * 例如提示框、代码块、键盘按键等，与主布局样式分离。
- */
 
-/* === 定义一些用于内容的变量（可选，但推荐） === */
 :root {
   --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   --font-mono: "JetBrainsMono Nerd Font", "Fira Code", "Cascadia Code", monospace;
