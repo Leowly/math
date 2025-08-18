@@ -6,206 +6,146 @@
   --anim: .25s;
 }
 
-/* === 页面整体布局与字体 === */
 body {
-  margin: 0; /* 移除浏览器默认的 body 边距 */
-  padding: 0 1rem 3rem; /* 页面内边距：上下留白，左右留出空间，防止内容贴边 */
-  background: var(--grey); /* 使用变量设置背景色 */
-  /* 设置字体栈：优先使用 JetBrainsMono Nerd Font，如果不存在则使用 Noto Sans SC (思源黑体)，最后使用通用无衬线字体 */
+  margin: 0;
+  padding: 0 1rem 3rem; /* 移除顶部的 5rem 内边距 */
+  background: var(--grey);
   font-family: "JetBrainsMono Nerd Font", "Noto Sans SC", sans-serif;
-  color: #222; /* 设置基本文字颜色 */
-  -webkit-font-smoothing: antialiased; /* 在 Webkit 内核浏览器（如 Chrome, Safari）上优化字体渲染 */
-  -moz-osx-font-smoothing: grayscale;  /* 在 Firefox 上优化字体渲染 */
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* === 网站主标题 === */
 .site-title {
-  text-align: center; /* 标题居中显示 */
-  color: var(--blue); /* 使用主题色 */
-  margin: 2rem 0 1.5rem; /* 标题的上下外边距，用于拉开与页面顶部和内容的距离 */
-  font-size: 1.8rem; /* 设置标题字号 */
+  text-align: center;
+  color: var(--blue);
+  margin: 5rem 0 1.5rem; /* 增加 margin-top 为固定的头部留出空间 */
+  font-size: 1.8rem;
 }
 
-/* === 目录容器 === */
 #toc {
-  max-width: 760px; /* 限制目录的最大宽度，在大屏幕上防止内容过宽，提升可读性 */
-  margin: auto; /* 当容器宽度小于 max-width 时，自动居中显示 */
-}
-
-/* === 每本书的折叠框样式（卡片效果） === */
-#toc details {
-  background: #fff; /* 设置白色背景，与页面背景形成对比 */
-  border-radius: var(--radius); /* 使用变量设置圆角 */
-  margin: 0.75rem 0; /* 折叠框之间的垂直间距 */
-  padding: 0.4rem 0.9rem; /* 折叠框内部的上下和左右内边距 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06); /* 添加轻微的阴影，营造卡片悬浮感 */
-  transition: background var(--anim); /* 为背景色变化添加平滑过渡动画 */
-}
-
-/* === 折叠框的标题（可点击区域） === */
-#toc summary {
-  cursor: pointer; /* 鼠标悬停时显示为手型，提示用户可以点击 */
-  font-weight: 600; /* 字体加粗 */
-  color: var(--blue); /* 使用主题色 */
-  user-select: none; /* 禁止用户选中文本，优化点击体验 */
-  list-style: none; /* 去掉 <summary> 默认的三角箭头 */
-  position: relative; /* 设置为相对定位，为其伪元素 `::before` 提供定位上下文 */
-  padding-left: 1.2rem; /* 在左侧留出空间给自定义的箭头 */
-  padding-top: 0.5rem;    /* 增加上下内边距，扩大点击区域 */
-  padding-bottom: 0.5rem;
-}
-
-/* 兼容 Firefox 去掉默认箭头 */
-#toc summary::-webkit-details-marker {
-  display: none;
-}
-
-/* === 自定义折叠/展开小箭头 === */
-/*
- * 使用 ::before 伪元素在 <summary> 内部的最前面添加内容。
- * 这是一个常见的技巧，用于创建自定义的列表标记或图标。
- */
-#toc summary::before {
-  content: "▸"; /* 箭头符号 */
-  position: absolute; /* 绝对定位，相对于 <summary> */
-  left: 0; /* 定位到 <summary> 的最左侧（padding-left 留出的空间里） */
-  transition: transform var(--anim); /* 为 transform 属性（旋转）添加过渡动画 */
-}
-/* 当 <details> 元素处于展开状态时，旋转其子元素 <summary> 的箭头 */
-#toc details[open] > summary::before {
-  transform: rotate(90deg); /* 顺时针旋转90度 */
-}
-
-/* === 单元章节列表 === */
-.unit-list {
-  list-style: none; /* 去掉列表默认的项目符号（小圆点） */
-  margin: 0.1rem 0 0.4rem 1.3rem; /* 列表外边距，调整与 <summary> 的距离并保持左侧缩进 */
-  padding-left: 0; /* 移除列表默认的左内边距，因为我们用 margin-left 来控制缩进 */
-}
-.unit-list li {
-  margin: 0.3rem 0; /* 列表项之间的垂直间距 */
-}
-
-/* === 章节链接样式 === */
-.unit-list a {
-  text-decoration: none; /* 去掉链接的下划线 */
-  color: #333; /* 设置链接文字颜色 */
-  padding: 0.2rem 0.4rem; /* 链接内边距，使其看起来像一个标签 */
-  border-radius: var(--radius); /* 使用统一的圆角 */
-  transition: background var(--anim), color var(--anim); /* 为背景和颜色变化添加动画 */
-  display: inline-block; /* 让内联元素a可以设置padding */
-}
-/* 鼠标悬停在链接上时的效果 */
-.unit-list a:hover {
-  background: var(--blue-light); /* 改变背景色 */
-  color: var(--blue); /* 改变文字颜色 */
-}
-
-/* === 返回链接 === */
-/*
- * 这是在内容详情页顶部，用于返回索引页的链接样式。
- * 我们希望它看起来像一个清晰、可点击的按钮。
- */
-.back-link {
-  display: inline-block; /* 允许设置 padding, margin 和其他块级属性，但不会占满整行 */
-  margin: 1.5rem 0 0.5rem; /* 设置外边距：顶部距离拉开，底部留些空间，左右不加 */
-  padding: 0.5rem 1rem;   /* 设置内边距，增大点击区域，使其看起来像个按钮 */
-  
-  background: #fff;       /* 白色背景，与卡片样式一致 */
-  color: var(--blue);     /* 使用主题蓝色作为文字颜色 */
-  font-weight: 500;       /* 适度加粗字体 */
-  text-decoration: none;  /* 去掉链接默认的下划线 */
-  
-  border-radius: var(--radius); /* 使用全局圆角变量 */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.07); /* 添加一个比卡片更细微的阴影 */
-
-  /* 为所有变化的属性添加平滑过渡效果 */
-  transition: all var(--anim);
-}
-
-/* 鼠标悬停时的交互效果 */
-.back-link:hover {
-  background: var(--blue-light); /* 使用浅蓝色背景，提供清晰的视觉反馈 */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* 阴影稍微加深，营造上浮效果 */
-  transform: translateY(-2px); /* 向上轻微移动，增加动感 */
-}
-
-/* 鼠标点击时的交互效果 */
-.back-link:active {
-  transform: translateY(0); /* 按下时恢复原位 */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* 阴影变得更小，模拟被按下去的感觉 */
-}
-
-/* === 内容页标题 (H2) === */
-/*
- * 这是在详情页（如 b1_1_1.html）中显示章节名称的标题。
- * 我们通过颜色、下划线和间距来使其突出，并与正文内容区分开。
- */
-h2 {
-  font-size: 1.6rem; /* 字号比网站主标题稍小，但比正文大得多 */
-  font-weight: 600; /* 半粗体，有分量感但不过于粗重 */
-  color: #333;     /* 使用深灰色，比纯黑更柔和，易于阅读 */
-  
-  /* 关键：创建一个装饰性的下划线 */
-  border-bottom: 2px solid var(--blue-light); /* 使用浅蓝色作为下划线颜色，与主题呼应又不抢眼 */
-  padding-bottom: 0.5rem; /* 在文字和下划线之间留出一些空间，这是提升质感的关键细节 */
-  
-  /* 设置外边距，确保标题与上方“返回”链接和下方正文之间有足够的呼吸空间 */
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-}
-
-/* 页面头部容器 */
-.page-header {
-  /* 默认情况下，这个容器只作为布局包裹元素，不添加额外样式 */
-  /* 响应式样式将在这里生效 */
-  padding: 0 1rem; /* 增加一点内边距以匹配body */
   max-width: 760px;
   margin: auto;
 }
 
-/*
- * ========================================
- * === 响应式设计：针对小屏幕设备（如手机） ===
- * ========================================
- * 当屏幕宽度小于等于 600px 时，应用以下样式。
- */
+#toc details {
+  background: #fff;
+  border-radius: var(--radius);
+  margin: 0.75rem 0;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: background var(--anim);
+}
+
+#toc summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--blue);
+  user-select: none;
+  list-style: none;
+  position: relative;
+  padding-left: 1.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#toc summary::-webkit-details-marker {
+  display: none;
+}
+
+#toc summary::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  transition: transform var(--anim);
+}
+#toc details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.unit-list {
+  list-style: none;
+  margin: 0.1rem 0 0.4rem 1.3rem;
+  padding-left: 0;
+}
+.unit-list li {
+  margin: 0.3rem 0;
+}
+
+.unit-list a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius);
+  transition: background var(--anim), color var(--anim);
+  display: inline-block;
+}
+.unit-list a:hover {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.back-link {
+  position: absolute;
+  left: 1rem;
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 精确垂直居中 */
+  display: inline-block;
+  margin: 0;    /* 绝对定位不需要外边距 */
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--blue);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+  transition: all var(--anim);
+}
+.back-link:hover {
+  background: var(--blue-light);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  /* transform: translateY(-2px); */ /* 移除或调整，因为父元素已有transform */
+}
+.back-link:active {
+  transform: translateY(-50%); /* 保持垂直居中 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid var(--blue-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.page-header {
+  position: fixed; /* 改为 fixed 定位，使其始终在屏幕顶部 */
+  top: 0;
+  left: 0; /* 确保从左边开始 */
+  right: 0; /* 确保撑满整个宽度 */
+  z-index: 10;
+  background: var(--grey);
+  padding: 0 1rem; /* 调整内边距以对齐内容 */
+  max-width: 100%;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  height: 3rem; /* 固定高度 */
+}
+
 @media (max-width: 600px) {
+  .page-header { text-align: center; }
+  body { padding: 0 0.5rem 2rem; } /* 移除顶部内边距 */
+  .site-title { font-size: 1.6rem; margin: 5rem 0 1rem; }
+  #toc details { padding: 0.3rem 0.7rem; }
+  .unit-list a { padding: 0.4rem 0.5rem; }
+  h2 { font-size: 1.4rem; margin-bottom: 1rem; }
 
-  /* 页面头部容器，在小屏幕上居中返回按钮 */
-  .page-header {
-    text-align: center;
+  .back-link {
+    position: static;
+    transform: none;
+    margin: 1.5rem 0 0.5rem;
+    display: inline-block;
   }
-
-  /* 在小屏幕上，减小页面左右边距，最大化内容区域 */
-  body {
-    padding: 0 0.5rem 2rem;
-  }
-
-  /* 适当减小主标题的字号和外边距，节省垂直空间 */
-  .site-title {
-    font-size: 1.6rem;
-    margin: 1.5rem 0 1rem;
-  }
-
-  /* 减小卡片内边距，使其更紧凑 */
-  #toc details {
-    padding: 0.3rem 0.7rem;
-  }
-
-  /* 
-   * 优化触摸体验：增大章节链接的内边距，特别是垂直方向。
-   * 这使得链接在触摸屏上更容易被准确点击，是移动端可用性的重要一环。
-   */
-  .unit-list a {
-    padding: 0.4rem 0.5rem;
-  }
-
-  /* 调整内容页标题在小屏幕上的大小和间距 */
-  h2 {
-    font-size: 1.4rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
 }
