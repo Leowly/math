@@ -133,19 +133,3 @@ h2 {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   height: 3rem; /* 固定高度 */
 }
-
-@media (max-width: 600px) {
-  .page-header { text-align: center; }
-  body { padding: 0 0.5rem 2rem; } /* 移除顶部内边距 */
-  .site-title { font-size: 1.6rem; margin: 5rem 0 1rem; }
-  #toc details { padding: 0.3rem 0.7rem; }
-  .unit-list a { padding: 0.4rem 0.5rem; }
-  h2 { font-size: 1.4rem; margin-bottom: 1rem; }
-
-  .back-link {
-    position: static;
-    transform: none;
-    margin: 1.5rem 0 0.5rem;
-    display: inline-block;
-  }
-}
