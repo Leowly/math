@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>三角换元｜选修1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS文件 -->
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/content-styles.css">
+  <!-- KaTeX渲染脚本 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <!-- GGB 渲染脚本 -->
+  <script defer src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+  <script defer src="/static/ggb/ggb-loader.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="page-header">
+      <a href="/index.html" class="back-link">← 返回目录</a>
+    </div>
+
+    
+<div class="chapter-content">
+  <h2>利用参数方程（三角换元）求最值</h2>
+  <p>在处理与圆、椭圆等二次曲线相关的最值问题时，点 \(P(x, y)\) 的坐标受到曲线方程的约束，这使得问题涉及两个变量，处理起来较为复杂。<strong>“三角换元”</strong>（或称参数方程法）是一个极其强大的工具，它能巧妙地解决这个问题。</p>
+  <p>其核心思想是：利用三角函数的性质，将曲线上的点 \(P(x, y)\) 的两个坐标变量，用一个单一的角参数（如 \(\alpha\)）来表示。例如，对于椭圆 \( \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \)，我们可以令 \(x = a\cos\alpha, y = b\sin\alpha\)。这样，一个关于 \(x, y\) 的二维最值问题，就成功转化为了一个关于 \(\alpha\) 的一维三角函数最值问题，从而大大简化了计算。</p>
+
+  <div class="tip-box">
+      <h4>三角换元的核心优势</h4>
+      <p><strong>降维打击</strong>：将两个变量 (\(x, y\)) 的问题，转化为单个变量 (\(\alpha\)) 的问题。</p>
+  </div>
+
+  <h3>核心例题</h3>
+  <p><strong>题目：</strong>已知椭圆 \( C: \frac{x^2}{5} + y^2 = 1 \) 及直线 \( l: x - 2y - 4 = 0 \)。设点 \( P \) 为椭圆 \( C \) 上的动点，求点 \( P \) 到直线 \( l \) 的距离 \( d \) 的最小值 \( d_{min} \)。</p>
+
+  <h3>步骤1：用三角函数表示点P的坐标</h3>
+  <p>首先，我们将椭圆方程 \( \frac{x^2}{5} + y^2 = 1 \) 改写为标准形式 \( (\frac{x}{\sqrt{5}})^2 + (y)^2 = 1 \)。</p>
+  <p>根据三角恒等式 \( \cos^2\alpha + \sin^2\alpha = 1 \)，我们可以进行变量替换：</p>
+  <ul>
+    <li>令 \( \frac{x}{\sqrt{5}} = \cos\alpha \)，则 \( x = \sqrt{5}\cos\alpha \)</li>
+    <li>令 \( y = \sin\alpha \)</li>
+  </ul>
+  <p>这样，椭圆上任意一点 \( P \) 的坐标就可以用单一参数 \( \alpha \) 表示为 \( (\sqrt{5}\cos\alpha, \sin\alpha) \)。</p>
+
+  <h3>步骤2：用含 \(\alpha\) 的式子表示距离</h3>
+  <p>现在，问题转化成了求参数方程表示的点 \( P \) 到直线 \( l: x - 2y - 4 = 0 \) 的距离。我们直接使用点到直线的距离公式。</p>
+  <div class="notice-box">
+    <p><strong>点到直线距离公式回顾：</strong>点 \( (x_0, y_0) \) 到直线 \( Ax+By+C=0 \) 的距离为 \( d = \frac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}} \)。</p>
+  </div>
+  <p>将点 \( P(\sqrt{5}\cos\alpha, \sin\alpha) \) 代入公式：</p>
+  <div class="output-box">
+    \[
+    \begin{aligned}
+      d &= \frac{|1 \cdot (\sqrt{5}\cos\alpha) - 2 \cdot (\sin\alpha) - 4|}{\sqrt{1^2 + (-2)^2}} \\
+      &= \frac{|\sqrt{5}\cos\alpha - 2\sin\alpha - 4|}{\sqrt{5}}
+    \end{aligned}
+    \]
+  </div>
+
+  <h3>步骤3：求出分子表达式的取值范围</h3>
+  <p>我们的目标是求 \( d \) 的最小值，这完全取决于分子 \( |\sqrt{5}\cos\alpha - 2\sin\alpha - 4| \) 的最小值。我们先集中处理其中的三角函数部分。</p>
+  <p>根据<strong>辅助角公式</strong>，形如 \( A\cos\alpha + B\sin\alpha \) 的表达式，其最值为 \( \pm\sqrt{A^2+B^2} \)。</p>
+  <ul>
+    <li>对于表达式 \( \sqrt{5}\cos\alpha - 2\sin\alpha \)，我们有 \( A=\sqrt{5}, B=-2 \)。</li>
+    <li>其振幅（最大值）为 \( \sqrt{(\sqrt{5})^2 + (-2)^2} = \sqrt{5+4} = 3 \)。</li>
+    <li>所以，我们得到该部分的取值范围：
+      \[ -3 \le \sqrt{5}\cos\alpha - 2\sin\alpha \le 3 \]
+    </li>
+    <li>现在我们把常数 \( -4 \) 加回来，对整个不等式进行平移：
+      \[
+      \begin{gathered}
+        -3 - 4 \le \sqrt{5}\cos\alpha - 2\sin\alpha - 4 \le 3 - 4 \\
+        -7 \le \sqrt{5}\cos\alpha - 2\sin\alpha - 4 \le -1
+      \end{gathered}
+      \]
+    </li>
+    <li>最后取绝对值。一个在区间 \( [-7, -1] \) 内的数，其绝对值的最小值为 \( |-1| = 1 \)。</li>
+  </ul>
+  <p>因此，分子 \( |\sqrt{5}\cos\alpha - 2\sin\alpha - 4| \) 的最小值为 \( 1 \)。</p>
+
+  <h3>步骤4：计算最终的最小距离</h3>
+  <p>将分子的最小值代入步骤2得到的距离公式中，即可求得距离 \( d \) 的最小值。</p>
+  <div class="output-box">
+    \[
+    d_{min} = \frac{1}{\sqrt{5}} = \frac{\sqrt{5}}{5}
+    \]
+  </div>
+</div>
+
+  </div>
+</body>
+</html>

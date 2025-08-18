@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>求距离｜选修1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS文件 -->
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/content-styles.css">
+  <!-- KaTeX渲染脚本 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <!-- GGB 渲染脚本 -->
+  <script defer src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+  <script defer src="/static/ggb/ggb-loader.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="page-header">
+      <a href="/index.html" class="back-link">← 返回目录</a>
+    </div>
+
+    
+<div class="chapter-content">
+  <h2>使用向量法求点到平面的距离（计算器技巧）</h2>
+
+  <p>在立体几何中，求点到平面的距离是一个常见题型。传统方法计算量较大，但借助科学计算器的向量功能，我们可以快速、准确地得到答案。下面是详细的操作步骤。</p>
+
+  <h3>步骤1：准备工作 - 定义坐标</h3>
+  <p>首先，我们需要确定题目中四个关键点的空间坐标：</p>
+  <ul>
+    <li>平面上的点 \( A = (A_x, A_y, A_z) \)</li>
+    <li>平面上的点 \( B = (B_x, B_y, B_z) \)</li>
+    <li>平面上的点 \( C = (C_x, C_y, C_z) \)</li>
+    <li>平面外的点 \( P = (P_x, P_y, P_z) \)</li>
+  </ul>
+  <div class="tip-box">
+    <p>这里的核心任务是求点 \( P \) 到由 \( A, B, C \) 三点确定的平面的距离。</p>
+  </div>
+
+  <h3>步骤2：构造平面内的两个向量</h3>
+  <p>为了描述这个平面，我们需要平面上的两个不共线的向量。通常我们选取由 \( A \) 点出发的两个向量：</p>
+  <div class="output-box" style="white-space: nowrap;">
+    \( \vec{AB} = B - A = (B_x - A_x, B_y - A_y, B_z - A_z) \)<br>
+    \( \vec{AC} = C - A = (C_x - A_x, C_y - A_y, C_z - A_z) \)
+  </div>
+
+  <h3>步骤3：计算平面的法向量 \( \vec{n} \)</h3>
+  <p>平面的法向量 \( \vec{n} \) 垂直于平面上的所有向量，可以通过 \( \vec{AB} \) 和 \( \vec{AC} \) 的<strong>叉积</strong>（Cross Product）得到。</p>
+  
+  <p>叉积的计算公式如下（以 \( \vec{AB} = (u_1, u_2, u_3) \) 和 \( \vec{AC} = (v_1, v_2, v_3) \) 为例）：</p>
+  <div class="output-box" style="white-space: nowrap;">
+  \[
+      \vec{n} = \vec{AB} \times \vec{AC} = 
+      \begin{vmatrix}
+      \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+      u_1 & u_2 & u_3 \\
+      v_1 & v_2 & v_3
+      \end{vmatrix}
+      = (u_2v_3 - u_3v_2)\mathbf{i} + (u_3v_1 - u_1v_3)\mathbf{j} + (u_1v_2 - u_2v_1)\mathbf{k}
+  \]
+  </div>
+
+  <div class="tip-box">
+    <p>你也可以直接在科学计算器中利用向量功能计算叉积。例如，若令：</p>
+    <ul>
+        <li>向量 \( \mathbf{VctA} = (1, 2, 3) \)</li>
+        <li>向量 \( \mathbf{VctB} = (4, 5, 6) \)</li>
+    </ul>
+    <p>在计算器中进入向量模式，依次输入两个向量后，使用“向量叉积”功能（通常表示为 \( \times \) ）即可求出法向量 \( \vec{n} \)。</p>
+    <img src="/static/images/x1_3_1_step3_1.jpg" alt="计算器输入向量叉积" >
+    <p>按 <span class="kbd">=</span> 键后，计算器会显示叉积结果向量 \( \vec{n} \)：</p>
+    <img src="/static/images/x1_3_1_step3_2.jpg" alt="计算器显示叉积结果">
+  </div>
+
+  <h3>步骤4：使用计算器计算投影值</h3>
+  <p>点到平面的距离公式为：\( d = \frac{|\vec{AP} \cdot \vec{n}|}{|\vec{n}|} \)。我们利用计算器的向量模式来计算公式的核心部分。</p>
+  <ol>
+    <li>进入计算器的“向量”模式。</li>
+    <li>定义向量 <span class="kbd">VctA</span>：这是从平面上任意一点指向点 \( P \) 的向量，我们使用 \( \vec{AP} = P - A \)。</li>
+    <li>定义向量 <span class="kbd">VctB</span>：这是我们在步骤3中计算出的法向量 \( \vec{n} \)。</li>
+    <li>在计算器中输入公式：<code>VctA · VctB ÷ Abs(VctB)</code> 然后按 <span class="kbd">=</span>。</li>
+  </ol>
+  <img src="/static/images/x1_3_1_step4_1.jpg" alt="计算器输入投影公式">
+  <div class="notice-box">
+    <p>这一步计算的是向量 \( \vec{AP} \) 在法向量 \( \vec{n} \) 上的投影的<strong>标量值</strong>。因为没有加最外层的绝对值，所以结果可能是负数。我们将在下一步处理符号问题。</p>
+  </div>
+
+  <h3>步骤5：获取精确的最终答案（关键技巧）</h3>
+  <p>上一步得到了一个小数，并且可能为负数。为了得到带根号的精确正值，我们使用以下技巧：</p>
+  <ol>
+    <li>将上一步的计算结果（Ans）储存到变量中。例如，按 <span class="kbd">STO</span> → <span class="kbd">x</span> 将结果存入变量 \( x \)。</li>
+    <img src="/static/images/x1_3_1_step5_1.jpg" alt="将结果存入变量x">
+    
+    <li>切换到常规的“计算”模式。</li>
+    
+    <li>输入表达式 \( \sqrt{x^2} \) 并按 <span class="kbd">=</span>。计算器就会显示最终的、化简过的、带根号的正确答案！</li>
+    <img src="/static/images/x1_3_1_step5_2.jpg" alt="计算x的平方根得到精确值">
+  </ol>
+  
+  <div class="tip-box">
+    <h4>为什么这个方法有效？</h4>
+    <p>这个技巧一箭双雕：<br>
+    1. <strong>处理正负号：</strong>对一个数先平方再开方，等效于取它的绝对值 ( \( \sqrt{x^2} = |x| \) )，完美解决了第4步中可能出现的负号问题。<br>
+    2. <strong>小数转根式：</strong>在“计算”模式下，将一个无理数平方后（如果原无理数是一个整数开方后得到的），可以得到一个整数，再对这个整数开根号，可以得到带根号和分数（如果有）形式的结果。
+    </p>
+  </div>
+
+</div>
+
+  </div>
+</body>
+</html>
