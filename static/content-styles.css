@@ -1,4 +1,3 @@
-
 :root {
   --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   --font-mono: "JetBrainsMono Nerd Font", "Fira Code", "Cascadia Code", monospace;
@@ -12,6 +11,7 @@
 .chapter-content {
   max-width: 100%; /* 确保在父容器内正常显示 */
   overflow-x: hidden;
+  padding-top: 3rem; /* 为固定的 page-header 留出空间 */
 }
 
 /* === 正文段落样式 === */
@@ -20,9 +20,6 @@
   font-size: 1.05rem;     /* 略微增大字号，提升阅读舒适度 */
   line-height: 1.8;       /* 增大行高是提升大段文字可读性的关键 */
   color: #333;
-  margin-bottom: 1.2em;   /* 段落下方留出足够间距 */
-  /* 可以考虑使用衬线字体以获得更好的长文阅读体验 */
-  /* font-family: var(--font-serif); */ 
 }
 
 
