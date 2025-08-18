@@ -5,7 +5,7 @@
 
 你可以直接访问已部署的网站进行在线浏览：
 
-[点我浏览](https://leowly.github.io/math)
+[点我浏览](https://math.0426233.xyz/)
 
 ## ✨ 主要特性
 
