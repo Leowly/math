@@ -5,8 +5,8 @@
   <title>三角换元｜选修1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS文件 -->
-  <link rel="stylesheet" href="/math/static/styles.css">
-  <link rel="stylesheet" href="/math/static/content-styles.css">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/content-styles.css">
   <!-- KaTeX渲染脚本 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
     onload="renderMathInElement(document.body);"></script>
   <!-- GGB 渲染脚本 -->
   <script defer src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-  <script defer src="/math/static/ggb/ggb-loader.js"></script>
+  <script defer src="/static/ggb/ggb-loader.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       renderMathInElement(document.body, {
@@ -26,12 +26,18 @@
       });
     });
   </script>
+
+<script>
+  // 自动适配 GitHub Pages 子路径和自定义域名
+  const isGithubPath = window.location.hostname.includes('github.io');
+  document.write('<base href="' + (isGithubPath ? '/math/' : '/') + '" />');
+</script>
 </head>
 
 <body>
   <div class="main-content">
     <div class="page-header">
-      <a href="/math/index.html" class="back-link">← 返回目录</a>
+      <a href="/index.html" class="back-link">← 返回目录</a>
     </div>
 
     

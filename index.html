@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>数学答题技巧</title>
-  <link rel="stylesheet" href="/math/static/styles.css">
+  <link rel="stylesheet" href="/static/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  // 自动适配 GitHub Pages 子路径和自定义域名
+  const isGithubPath = window.location.hostname.includes('github.io');
+  document.write('<base href="' + (isGithubPath ? '/math/' : '/') + '" />');
+</script>
 </head>
 <body>
   <h1 class="site-title">数学答题技巧目录</h1>
@@ -14,9 +20,9 @@
       <summary>必修1</summary>
       <ul class="unit-list">
         
-        <li><a href="/math/view/b1_2_1.html">2.1 基本不等式</a></li>
+        <li><a href="/view/b1_2_1.html">2.1 基本不等式</a></li>
         
-        <li><a href="/math/view/b1_5_1.html">5.1 根的分布</a></li>
+        <li><a href="/view/b1_5_1.html">5.1 根的分布</a></li>
         
       </ul>
     </details>
@@ -25,9 +31,9 @@
       <summary>选修1</summary>
       <ul class="unit-list">
         
-        <li><a href="/math/view/x1_2_1.html">2.1 三角换元</a></li>
+        <li><a href="/view/x1_2_1.html">2.1 三角换元</a></li>
         
-        <li><a href="/math/view/x1_3_1.html">3.1 求距离</a></li>
+        <li><a href="/view/x1_3_1.html">3.1 求距离</a></li>
         
       </ul>
     </details>
@@ -36,7 +42,7 @@
       <summary>试卷</summary>
       <ul class="unit-list">
         
-        <li><a href="/math/view/sj_1_2.html">1.2 不等式</a></li>
+        <li><a href="/view/sj_1_2.html">1.2 不等式</a></li>
         
       </ul>
     </details>
