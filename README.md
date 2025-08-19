@@ -96,5 +96,8 @@ python format.py
 
 ## 📜 License
 
-本项目采用 [MIT License](LICENSE) 授权。
+本项目采用 [知识共享署名-非商业性使用 4.0 国际许可协议 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh) 授权。
 
+您可以自由使用、分享和修改本项目，但**禁止任何形式的商业用途**，包括收费售卖、打包发布或盈利性服务。
+
+© 2025 Leowly 保留部分权利。
