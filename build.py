@@ -17,9 +17,11 @@ os.makedirs(BUILD_DIR, exist_ok=True)
 # ---- 新增：路径适配脚本 ----
 PATH_ADAPTER_SCRIPT = """
 <script>
-  // 自动适配 GitHub Pages 子路径和自定义域名
-  const isGithubPath = window.location.hostname.includes('github.io');
-  document.write('<base href="' + (isGithubPath ? '/math/' : '/') + '" />');
+    // 自动适配 GitHub Pages 子路径和自定义域名
+    const isGithubPath = window.location.hostname.includes('github.io');
+    const base = document.createElement('base');
+    base.href = isGithubPath ? '/math/' : '/';
+    document.head.appendChild(base);
 </script>
 """
 
