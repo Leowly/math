@@ -85,13 +85,7 @@
 
 /* === 4. 计算机查看框/代码框 === */
 .output-box {
-  /* 核心修复：重置最小宽度，防止内容撑开盒子 */
-  min-width: 0;
-
-  /* 保留这些，让它可以滚动 */
   overflow-x: auto;
-  
-  /* 保留原有的美化样式 */
   background: #fff;
   border: 1px solid #333;
   border-radius: var(--radius);

@@ -61,22 +61,22 @@
   <h3>步骤1：构造“常数1”</h3>
   <p>解题的关键，是先将题目给出的约束条件巧妙地变形，得到一个值为 1 的表达式。这是“乘1法”的“1”的来源。</p>
   <p><strong>对于问题1：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ x + 2y - 1 = 0 \implies x + 2y = 1 \]
   </div>
   <p><strong>对于问题2：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ x + 4y = xy \quad \xrightarrow{\text{两边同除以 } xy} \quad \frac{1}{y} + \frac{4}{x} = 1 \]
   </div>
   
   <h3>步骤2：核心技巧——“乘1法”</h3>
   <p>现在，我们将要求最值的目标式，乘以我们在上一步构造出的“1”。这一步的目的是拆开括号后，制造出形如 \( \frac{a}{b} + \frac{b}{a} \) 的互为倒数的项。</p>
   <p><strong>对于问题1，求 \( \frac{1}{x} + \frac{1}{y} \) 的最小值：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ \frac{1}{x} + \frac{1}{y} = \left(\frac{1}{x} + \frac{1}{y}\right) \times 1 = \left(\frac{1}{x} + \frac{1}{y}\right)(x+2y) = 1 + \frac{2y}{x} + \frac{x}{y} + 2 = 3 + \frac{2y}{x} + \frac{x}{y} \]
   </div>
   <p><strong>对于问题2，求 \( x + y \) 的最小值：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ x + y = (x+y) \times 1 = (x+y)\left(\frac{1}{y} + \frac{4}{x}\right) = \frac{x}{y} + 4 + 1 + \frac{4y}{x} = 5 + \frac{x}{y} + \frac{4y}{x} \]
   </div>
 
@@ -88,24 +88,24 @@
   <h3>步骤3：应用基本不等式</h3>
   <p>现在，我们对上一步得到的“变量部分”使用基本不等式。</p>
   <p><strong>对于问题1：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ \frac{2y}{x} + \frac{x}{y} \ge 2\sqrt{\frac{2y}{x} \cdot \frac{x}{y}} = 2\sqrt{2} \]
   </div>
   <p><strong>对于问题2：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ \frac{x}{y} + \frac{4y}{x} \ge 2\sqrt{\frac{x}{y} \cdot \frac{4y}{x}} = 2\sqrt{4} = 4 \]
   </div>
 
   <h3>步骤4：整合求解，得出最终答案</h3>
   <p>最后一步，我们将常数项与变量部分的最小值相加，得到整个表达式的最值，并根据题意回答问题。</p>
   <p><strong>对于问题1：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ \left(\frac{1}{x} + \frac{1}{y}\right)_{\min} = 3 + \left(\frac{2y}{x} + \frac{x}{y}\right)_{\min} = 3 + 2\sqrt{2} \]
   </div>
   <p>题目要求 \(m \le \frac{1}{x} + \frac{1}{y}\) <strong>恒成立</strong>。这意味着 \(m\) 必须小于或等于 \( \frac{1}{x} + \frac{1}{y} \) 的<strong>最小值</strong>。因此，\(m\) 的取值范围是 \( (-\infty, 3 + 2\sqrt{2}] \)。</p>
 
   <p><strong>对于问题2：</strong></p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \[ (x+y)_{\min} = 5 + \left(\frac{x}{y} + \frac{4y}{x}\right)_{\min} = 5 + 4 = 9 \]
   </div>
   
