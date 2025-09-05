@@ -14,11 +14,11 @@
   <p><strong>【解析】</strong></p>
   <p>题目要求 \(m\) 小于等于 \(\frac{1}{x} + \frac{1}{y}\) 对满足条件的所有正数 \(x, y\) 恒成立，这意味着 \(m\) 必须小于或等于 \(\frac{1}{x} + \frac{1}{y}\) 的<strong>最小值</strong>。</p>
   <p>我们来求 \(\frac{1}{x} + \frac{1}{y}\) 的最小值。由已知条件 \(x > 0, y > 0\) 且 \(x + 2y = 1\)。我们使用<strong>“乘1法”</strong>：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \frac{1}{x} + \frac{1}{y} = \left(\frac{1}{x} + \frac{1}{y}\right) \times 1 = \left(\frac{1}{x} + \frac{1}{y}\right)(x + 2y) = 1 + \frac{2y}{x} + \frac{x}{y} + 2 = 3 + \frac{2y}{x} + \frac{x}{y} \)
   </div>
   <p>根据基本不等式，因为 \(x, y\) 都是正数，所以 \(\frac{2y}{x}\) 和 \(\frac{x}{y}\) 也是正数：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \frac{2y}{x} + \frac{x}{y} \ge 2\sqrt{\frac{2y}{x} \cdot \frac{x}{y}} = 2\sqrt{2} \)
   </div>
   <p>所以，\(\frac{1}{x} + \frac{1}{y} \ge 3 + 2\sqrt{2}\)。等号成立的条件是 \(\frac{2y}{x} = \frac{x}{y}\)，即 \(x^2 = 2y^2\)，\(x = y\sqrt{2}\)。将此代入 \(x + 2y = 1\) 可以解出正数 \(x, y\)，说明等号可以取到。</p>
@@ -31,27 +31,27 @@
   <p><strong>【原题】</strong>已知正数 \(a, b, c\) 满足 \(a + 2b = 4\)，\(c > 1\)，则 \(\frac{bc}{2a} + \frac{c}{b} - \frac{c}{2} + \frac{2\sqrt{2}}{c-1}\) 的最小值为 ______。</p>
   <p><strong>【解析】</strong></p>
   <p>原式可以进行如下变形：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( E = \frac{bc}{2a} + \frac{c}{b} - \frac{c}{2} + \frac{2\sqrt{2}}{c-1} = c \left( \frac{b}{2a} + \frac{1}{b} - \frac{1}{2} \right) + \frac{2\sqrt{2}}{c-1} \)
   </div>
   <p>我们先处理括号内的部分 \(F = \frac{b}{2a} + \frac{1}{b} - \frac{1}{2}\)。利用 \(a + 2b = 4 \implies 1 = \frac{a+2b}{4}\)，我们可以进行“齐次化”代换：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \frac{1}{b} = \frac{a+2b}{4b} = \frac{a}{4b} + \frac{2b}{4b} = \frac{a}{4b} + \frac{1}{2} \)
   </div>
   <p>代入 \(F\) 中：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( F = \frac{b}{2a} + \left(\frac{a}{4b} + \frac{1}{2}\right) - \frac{1}{2} = \frac{b}{2a} + \frac{a}{4b} \ge 2\sqrt{\frac{b}{2a} \cdot \frac{a}{4b}} = 2\sqrt{\frac{1}{8}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \)
   </div>
   <p>将 \(F\) 的最小值代回原表达式 \(E\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( E \ge c \cdot \frac{\sqrt{2}}{2} + \frac{2\sqrt{2}}{c-1} \)
   </div>
   <p>令 \(g(c) = \frac{\sqrt{2}}{2}c + \frac{2\sqrt{2}}{c-1}\)。这是一个对勾函数形式，我们通过配凑 \(c-1\) 来求解：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( g(c) = \frac{\sqrt{2}}{2}(c-1 + 1) + \frac{2\sqrt{2}}{c-1} = \frac{\sqrt{2}}{2}(c-1) + \frac{\sqrt{2}}{2} + \frac{2\sqrt{2}}{c-1} = \frac{\sqrt{2}}{2} + \left[ \frac{\sqrt{2}}{2}(c-1) + \frac{2\sqrt{2}}{c-1} \right] \)
   </div>
   <p>对中括号内的部分使用基本不等式（因为 \(c>1\)，所以 \(c-1>0\)）：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( \left[ \dots \right] \ge 2\sqrt{\frac{\sqrt{2}}{2}(c-1) \cdot \frac{2\sqrt{2}}{c-1}} = 2\sqrt{2} \)
   </div>
   <p>所以，\(g(c) \ge \frac{\sqrt{2}}{2} + 2\sqrt{2} = \frac{5\sqrt{2}}{2}\)。因此，原表达式 \(E\) 的最小值为 \(\frac{5\sqrt{2}}{2}\)。</p>
@@ -63,7 +63,7 @@
   <p><strong>【原题】</strong>已知关于 \(x\) 的不等式 \(x^2 + 2024^2 + |x^3 - 2024x^2| \ge ax\) 在 \(x > 0\) 时恒成立，实数 \(a\) 的取值范围为 ______。</p>
   <p><strong>【解析】</strong></p>
   <p>因为 \(x > 0\)，我们可以将不等式两边同时除以 \(x\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( a \le \frac{x^2 + 2024^2 + |x^2(x - 2024)|}{x} = x + \frac{2024^2}{x} + \frac{x^2|x - 2024|}{x} = x + \frac{2024^2}{x} + x|x - 2024| \)
   </div>
   <div class="notice-box">
@@ -74,7 +74,7 @@
   <p><strong>特殊值法猜想</strong>：这种形式的函数，最值点往往出现在绝对值符号内为零的位置，即 \(x=k\)。</p>
   </div>
   <p>我们来检验 \(x=k\) 这一点的值：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( f(k) = k + \frac{k^2}{k} + k|k - k| = k + k + 0 = 2k = 2 \times 2024 = 4048 \)
   </div>
   <p>通过分类讨论或求导可以证明 \(x=k\) 是最小值点。
@@ -92,15 +92,15 @@
   <p><strong>【原题】</strong>已知 \(x > 0, y > 0\)，\(x + 4y = xy\)，则 \(x + y\) 的最小值为 ______。</p>
   <p><strong>【解析】</strong></p>
   <p>因为 \(x > 0, y > 0\)，所以 \(xy > 0\)。将等式 \(x + 4y = xy\) 两边同时除以 \(xy\)，得到：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \frac{x}{xy} + \frac{4y}{xy} = \frac{xy}{xy} \implies \frac{1}{y} + \frac{4}{x} = 1 \)
   </div>
   <p>我们要求 \(x + y\) 的最小值。使用<strong>“乘1法”</strong>：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( x + y = (x + y) \times 1 = (x + y)\left(\frac{1}{y} + \frac{4}{x}\right) = \frac{x}{y} + 4 + 1 + \frac{4y}{x} = 5 + \left(\frac{x}{y} + \frac{4y}{x}\right) \)
   </div>
   <p>根据基本不等式：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \frac{x}{y} + \frac{4y}{x} \ge 2\sqrt{\frac{x}{y} \cdot \frac{4y}{x}} = 2\sqrt{4} = 4 \)
   </div>
   <p>当且仅当 \(\frac{x}{y} = \frac{4y}{x}\)，即 \(x^2 = 4y^2\)，\(x = 2y\) 时等号成立。
@@ -126,7 +126,7 @@
     <li>抛物线与 x 轴没有交点：\(\Delta < 0\)。</li>
   </ol>
   <p>计算判别式 \(\Delta\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \Delta = (a+1)^2 - 4(a^2 - 1)(\frac{1}{2}) = (a+1)^2 - 2(a-1)(a+1) = (a+1)[(a+1) - 2(a-1)] = (a+1)(3-a) < 0 \)
   </div>
   <p>解不等式 \((a+1)(3-a) < 0 \implies (a+1)(a-3) > 0\)，解得 \(a > 3\) 或 \(a < -1\)。</p>
@@ -145,18 +145,18 @@
     \( \alpha\beta = \frac{p}{2} \)
   </div>
   <p>利用完全平方公式转换条件：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = 3 \)
   </div>
   <p>代入韦达定理的结果：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \left(-\frac{p}{2}\right)^2 - 2\left(\frac{p}{2}\right) = 3 \implies \frac{p^2}{4} - p = 3 \implies p^2 - 4p - 12 = 0 \)
   </div>
   <p>解得 \((p - 6)(p + 2) = 0\)，所以 \(p = 6\) 或 \(p = -2\)。</p>
   <div class="notice-box">
     <p><strong>重要</strong>：题目提到方程有<strong>两个实根</strong>，所以判别式 \(\Delta\) 必须大于等于 0。</p>
   </div>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
     \( \Delta = p^2 - 4(2)(p) = p^2 - 8p \ge 0 \implies p(p - 8) \ge 0 \)
   </div>
   <p>解得 \(p \le 0\) 或 \(p \ge 8\)。现在检验我们得到的两个 \(p\) 值：</p>
@@ -183,11 +183,11 @@
   </div>
   <p>根据题意，我们有 \(|P(1)| \le 1, |P(-1)| \le 1, |P(0)| \le 1\)。
   考虑一个巧妙的组合 \(P(1) + P(-1) - 2P(0)\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( P(1) + P(-1) - 2P(0) = (a+b+c) + (a-b+c) - 2c = 2a \)
   </div>
   <p>利用三角不等式 \(|x+y| \le |x|+|y|\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( |2a| = |P(1) + P(-1) - 2P(0)| \le |P(1)| + |P(-1)| + |-2P(0)| \le 1 + 1 + 2|P(0)| \le 1 + 1 + 2(1) = 4 \)
   </div>
   <p>所以 \(|2a| \le 4 \implies |a| \le 2\)。这说明 \(a\) 的最大值不可能超过 2。</p>
@@ -215,7 +215,7 @@
     <li>两根之积：\((c-a)(c+a) = b \implies c^2 - a^2 = b\)。</li>
   </ul>
   <p>将 \(a=2, c=-2\) 代入第二式：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( b = c^2 - a^2 = (-2)^2 - 2^2 = 4 - 4 = 0 \)
   </div>
   <p><strong>【答案】</strong>0</p>
@@ -231,15 +231,15 @@
   同时，\(\frac{1}{a} = 1 - \frac{4}{b} < 1\)，所以 \(a > 1\)，这意味着 \(a-1 > 0\)。
   现在我们将 \(a\) 代入要求最小值的表达式 \(S = \frac{1}{a-1} + \frac{9}{b}\)。
   首先计算 \(a-1\)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( a - 1 = \frac{b}{b-4} - 1 = \frac{b - (b-4)}{b-4} = \frac{4}{b-4} \)
   </div>
   <p>所以 \(\frac{1}{a-1} = \frac{b-4}{4}\)。表达式变为：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( S = \frac{b-4}{4} + \frac{9}{b} = \frac{b}{4} - 1 + \frac{9}{b} = \left(\frac{b}{4} + \frac{9}{b}\right) - 1 \)
   </div>
   <p>因为 \(b > 4 > 0\)，我们可以对括号内的部分使用基本不等式：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( \frac{b}{4} + \frac{9}{b} \ge 2\sqrt{\frac{b}{4} \cdot \frac{9}{b}} = 2\sqrt{\frac{9}{4}} = 2 \cdot \frac{3}{2} = 3 \)
   </div>
   <p>当且仅当 \(\frac{b}{4} = \frac{9}{b}\)，即 \(b^2 = 36\)。因为 \(b>0\)，所以 \(b = 6\)。\(b=6\) 满足 \(b>4\) 的条件。
@@ -279,17 +279,17 @@
   <ul>
     <li><strong>A. 若 \(0 < x < 1\)，则 \(x^2(1-x) \le \frac{1}{9}\)</strong><br>
     考虑三个正数 \(\frac{x}{2}, \frac{x}{2}, 1-x\)。它们的和为1。
-    <div class="output-box" style="white-space: nowrap;">\( \frac{\frac{x}{2}+\frac{x}{2}+(1-x)}{3} \ge \sqrt[3]{\frac{x}{2} \cdot \frac{x}{2} \cdot (1-x)} \implies \frac{1}{3} \ge \sqrt[3]{\frac{x^2(1-x)}{4}} \)</div>
+    <div class="output-box">\( \frac{\frac{x}{2}+\frac{x}{2}+(1-x)}{3} \ge \sqrt[3]{\frac{x}{2} \cdot \frac{x}{2} \cdot (1-x)} \implies \frac{1}{3} \ge \sqrt[3]{\frac{x^2(1-x)}{4}} \)</div>
     立方得 \(\frac{1}{27} \ge \frac{x^2(1-x)}{4} \implies x^2(1-x) \le \frac{4}{27}\)。因为 \(\frac{4}{27} > \frac{1}{9} = \frac{3}{27}\)，所以原命题是假的。</li>
     <li><strong>B. 若 \(x > 0\)，则 \(2x + \frac{1}{x^2} \ge \frac{27}{8}\)</strong><br>
     考虑三个正数 \(x, x, \frac{1}{x^2}\)。
-    <div class="output-box" style="white-space: nowrap;">\( 2x + \frac{1}{x^2} = x + x + \frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
+    <div class="output-box">\( 2x + \frac{1}{x^2} = x + x + \frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
     因为 \(3 = \frac{24}{8} < \frac{27}{8}\)，所以原命题是假的。</li>
     <li><strong>C. 若 \(0 < x < 1\)，则 \(x^2(1-x) \ge \frac{1}{9}\)</strong><br>
     由A的分析，\(x^2(1-x)\) 的最大值为 \(\frac{4}{27}\)，可以取到比 \(\frac{1}{9}\) 小的值，所以C是假的。</li>
     <li><strong>D. 若 \(x > 0\)，则 \(x^2 + \frac{2}{x} \ge 3\)</strong><br>
     考虑三个正数 \(x^2, \frac{1}{x}, \frac{1}{x}\)。
-    <div class="output-box" style="white-space: nowrap;">\( x^2 + \frac{2}{x} = x^2 + \frac{1}{x} + \frac{1}{x} \ge 3\sqrt[3]{x^2 \cdot \frac{1}{x} \cdot \frac{1}{x}} = 3\sqrt[3]{1} = 3 \)</div>
+    <div class="output-box">\( x^2 + \frac{2}{x} = x^2 + \frac{1}{x} + \frac{1}{x} \ge 3\sqrt[3]{x^2 \cdot \frac{1}{x} \cdot \frac{1}{x}} = 3\sqrt[3]{1} = 3 \)</div>
     等号在 \(x^2 = \frac{1}{x}\)，即 \(x=1\) 时成立。所以D是真的。</li>
   </ul>
   <p><strong>【答案】</strong>D</p>
@@ -309,11 +309,11 @@
   由于解集是 \((x_1, x_2)\) 且 \(0 < x_2 < 1\)，要包含3个整数，这3个整数必须是 <strong>0, -1, -2</strong>。
   这要求区间的左端点 \(x_1\) 必须满足：\(-3 \le x_1 < -2\)。
   </p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( -3 \le \frac{b}{1-a} < -2 \)
   </div>
   <p>因为 \(1-a\) 是负数，不等式两边同乘 \(1-a\) 并<strong>反向</strong>：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( -3(1-a) \ge b > -2(1-a) \implies 3a-3 \ge b > 2a-2 \)
   </div>
   <p>我们要找的 \(b\) 必须同时满足 \(0 < b < a+1\) 和 \(2a-2 < b \le 3a-3\)。要存在这样的 \(b\)，两个区间 \((2a-2, 3a-3]\) 和 \((0, a+1)\) 的交集必须非空。
@@ -333,18 +333,18 @@
 
     <li><strong>② 若 \(x + 3y = xy\)，则 \(x + y\) 的最小值为 \(4 + 2\sqrt{3}\)</strong><br>
     两边同除以 \(xy\) 得 \(\frac{1}{y} + \frac{3}{x} = 1\)。
-    <div class="output-box" style="white-space: nowrap;">\( x+y = (x+y)\left(\frac{1}{y} + \frac{3}{x}\right) = \frac{x}{y} + 1 + 3 + \frac{3y}{x} = 4 + \left(\frac{x}{y} + \frac{3y}{x}\right) \ge 4 + 2\sqrt{\frac{x}{y} \cdot \frac{3y}{x}} = 4 + 2\sqrt{3} \)</div>
+    <div class="output-box">\( x+y = (x+y)\left(\frac{1}{y} + \frac{3}{x}\right) = \frac{x}{y} + 1 + 3 + \frac{3y}{x} = 4 + \left(\frac{x}{y} + \frac{3y}{x}\right) \ge 4 + 2\sqrt{\frac{x}{y} \cdot \frac{3y}{x}} = 4 + 2\sqrt{3} \)</div>
     命题正确。</li>
 
     <li><strong>③ 若 \(x + 2y + xy = 4\)，则 \(x + 2y\) 的最小值为 \(4\sqrt{3} - 4\)</strong><br>
     令 \(S = x+2y\)，则 \(xy = 4-S\)。由基本不等式 \((x+2y)^2 \ge 4x(2y) = 8xy\)。
-    <div class="output-box" style="white-space: nowrap;">\( S^2 \ge 8(4-S) \implies S^2+8S-32 \ge 0 \)</div>
+    <div class="output-box">\( S^2 \ge 8(4-S) \implies S^2+8S-32 \ge 0 \)</div>
     解关于 \(S\) 的不等式，由于 \(S>0\)，解得 \(S \ge \frac{-8 + \sqrt{64 - 4(1)(-32)}}{2} = \frac{-8 + \sqrt{192}}{2} = -4 + 4\sqrt{3}\)。命题正确。</li>
 
     <li><strong>④ \(\frac{2x}{3x + 2y} + \frac{2y}{x + 3y}\) 的最大值为 \(\frac{12 - 3\sqrt{2}}{7}\)</strong><br>
     令 \(E\) 为原式。换元 \(u=3x+2y, v=x+3y\)。可以解出 \(x=\frac{3u-2v}{7}, y=\frac{3v-u}{7}\)。
-    <div class="output-box" style="white-space: nowrap;">\( E = \frac{2x}{u} + \frac{2y}{v} = \frac{2(3u-2v)}{7u} + \frac{2(3v-u)}{7v} = \frac{6}{7} - \frac{4v}{7u} + \frac{6}{7} - \frac{2u}{7v} = \frac{12}{7} - \frac{1}{7}\left(\frac{4v}{u} + \frac{2u}{v}\right) \)</div>
-    <div class="output-box" style="white-space: nowrap;">\( E \le \frac{12}{7} - \frac{1}{7} \cdot 2\sqrt{\frac{4v}{u} \cdot \frac{2u}{v}} = \frac{12}{7} - \frac{2\sqrt{8}}{7} = \frac{12-4\sqrt{2}}{7} \)</div>
+    <div class="output-box">\( E = \frac{2x}{u} + \frac{2y}{v} = \frac{2(3u-2v)}{7u} + \frac{2(3v-u)}{7v} = \frac{6}{7} - \frac{4v}{7u} + \frac{6}{7} - \frac{2u}{7v} = \frac{12}{7} - \frac{1}{7}\left(\frac{4v}{u} + \frac{2u}{v}\right) \)</div>
+    <div class="output-box">\( E \le \frac{12}{7} - \frac{1}{7} \cdot 2\sqrt{\frac{4v}{u} \cdot \frac{2u}{v}} = \frac{12}{7} - \frac{2\sqrt{8}}{7} = \frac{12-4\sqrt{2}}{7} \)</div>
     命题错误。</li>
   </ul>
   <p>正确的命题是 ② 和 ③。</p>
@@ -401,35 +401,35 @@
   <p><strong>【解析】</strong></p>
   <h4>(1) 求最小值</h4>
   <p>我们注意到分母之和 \((2a+b) + (b+2) = 2a+2b+2 = 2(a+b)+2 = 2(1)+2 = 4\)。可以使用“乘常数法”：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( E = \frac{1}{4} \left( \frac{1}{2a+b} + \frac{4}{b+2} \right) \cdot 4 = \frac{1}{4} \left( \frac{1}{2a+b} + \frac{4}{b+2} \right) ((2a+b) + (b+2)) \)
   </div>
   <p>展开得：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( E = \frac{1}{4} \left[ 1 + \frac{b+2}{2a+b} + \frac{4(2a+b)}{b+2} + 4 \right] = \frac{1}{4} \left[ 5 + \left( \frac{b+2}{2a+b} + \frac{4(2a+b)}{b+2} \right) \right] \)
   </div>
   <p>对括号内使用基本不等式：\(\dots \ge 2\sqrt{\frac{b+2}{2a+b} \cdot \frac{4(2a+b)}{b+2}} = 2\sqrt{4} = 4\)。</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( E_{min} = \frac{1}{4} [5+4] = \frac{9}{4} \)
   </div>
   <h4>(2) ① 证明</h4>
   <p>设 \(x-y=k\), 则 \(x=y+k\)。代入双曲线方程 \( \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \)：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( \frac{(y+k)^2}{a^2} - \frac{y^2}{b^2} = 1 \implies b^2(y+k)^2 - a^2y^2 = a^2b^2 \)
   </div>
   <p>整理成关于 \(y\) 的二次方程：\((b^2-a^2)y^2 + (2b^2k)y + (b^2k^2-a^2b^2) = 0\)。因为 \(y\) 有实数解，判别式 \(\Delta \ge 0\)。</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( \Delta = (2b^2k)^2 - 4(b^2-a^2)(b^2k^2-a^2b^2) \ge 0 \)
   </div>
   <p>化简得 \(a^2b^4 + a^2b^2k^2 - a^4b^2 \ge 0\)。两边同除以正数 \(a^2b^2\) 得 \(b^2 + k^2 - a^2 \ge 0\)，即 \(k^2 \ge a^2 - b^2\)。所以 \((x-y)^2 \ge a^2-b^2\)。</p>
   <h4>(2) ② 求最小值</h4>
   <p>定义域要求 \(4m-6 \ge 0\) 且 \(m-3 \ge 0\)，解得 \(m \ge 3\)。对 \(M(m)\) 求导：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( M'(m) = \frac{1}{2\sqrt{4m-6}} \cdot 4 - \frac{1}{2\sqrt{m-3}} = \frac{2}{\sqrt{4m-6}} - \frac{1}{2\sqrt{m-3}} \)
   </div>
   <p>令 \(M'(m)=0\) 解得 \(4\sqrt{m-3} = \sqrt{4m-6} \implies 16(m-3) = 4m-6 \implies m = \frac{7}{2}\)。
   分析单调性可知 \(m=\frac{7}{2}\) 是最小值点。</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( M_{min} = \sqrt{4(\frac{7}{2})-6} - \sqrt{\frac{7}{2}-3} = \sqrt{8} - \sqrt{\frac{1}{2}} = 2\sqrt{2} - \frac{\sqrt{2}}{2} = \frac{3\sqrt{2}}{2} \)
   </div>
   <p><strong>【答案】</strong>(1) \(\frac{9}{4}\) (2) ② 最小值为 \(\frac{3\sqrt{2}}{2}\)，此时 \(m = \frac{7}{2}\)。</p>
@@ -451,7 +451,7 @@
   <p>解集为 \((-\frac{2}{5}, \frac{1}{3})\)。</p>
   <h4>(2) 求f(x)解析式</h4>
   <p>\(\alpha, \beta\) 是 \(f(x) = x\)，即 \(ax^2 + 3x + b = 0\) 的根。由 \(|\alpha - \beta| = 1\)，平方得 \((\alpha-\beta)^2=1\)。</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( (\alpha+\beta)^2 - 4\alpha\beta = 1 \implies (-\frac{3}{a})^2 - 4(\frac{b}{a}) = 1 \implies \frac{9}{a^2} - \frac{4b}{a} = 1 \)
   </div>
   <p>两边同乘 \(a^2\) 得 \(9 - 4ab = a^2 \implies a^2 + 4ab = 9 \implies a(a+4b)=9\)。
@@ -464,12 +464,12 @@
   <p>所以 \(f(x) = -x^2 + 4x - 2\)。</p>
   <h4>(3) 证明</h4>
   <p>令 \(g(x)=ax^2+3x+b\)。\(\alpha < 1 < \beta < 2\) 意味着 \(g(1)>0, g(2)<0\)。
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( g(1)=a+3+b>0 \implies a+b>-3 \)<br>
   \( g(2)=4a+6+b<0 \implies 4a+b<-6 \)
   </div>
   <p>要证 \((x_1 + 1)(x_2 + 1) < 7\)，即 \(x_1x_2 + (x_1+x_2) + 1 < 7\)。</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( \frac{b}{a} - \frac{4}{a} + 1 < 7 \implies \frac{b-4}{a} < 6 \)
   </div>
   <p>因为 \(a<0\)，所以等价于证明 \(b-4 > 6a \implies b-6a > 4\)。
@@ -527,11 +527,11 @@
   <p><strong>【解析】</strong></p>
   <h4>(1) 证明</h4>
   <p>计算三者之和：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( a+b+c = (x^2-x+\frac{1}{3x^2}) + (x+\frac{1}{3x^2}-1) + (-x-\frac{2}{3x^2}+2) = x^2-x+1 \)
   </div>
   <p>对结果配方：</p>
-  <div class="output-box" style="white-space: nowrap;">
+  <div class="output-box">
   \( a+b+c = (x-\frac{1}{2})^2 - \frac{1}{4} + 1 = (x-\frac{1}{2})^2 + \frac{3}{4} \ge \frac{3}{4} \)
   </div>
   <p><strong>反证法</strong>：假设 a、b、c 都小于 \(\frac{1}{4}\)，即 \(a < \frac{1}{4}, b < \frac{1}{4}, c < \frac{1}{4}\)。
@@ -542,12 +542,12 @@
   <p>作差比较：</p>
   <ul>
     <li><strong>a 与 b:</strong>
-    <div class="output-box" style="white-space: nowrap;">\( a - b = (x^2-x+\frac{1}{3x^2}) - (x+\frac{1}{3x^2}-1) = x^2-2x+1 = (x-1)^2 \ge 0 \)</div>
+    <div class="output-box">\( a - b = (x^2-x+\frac{1}{3x^2}) - (x+\frac{1}{3x^2}-1) = x^2-2x+1 = (x-1)^2 \ge 0 \)</div>
     所以 \(a \ge b\)。</li>
     <li><strong>b 与 c:</strong>
-    <div class="output-box" style="white-space: nowrap;">\( b - c = (x+\frac{1}{3x^2}-1) - (-x-\frac{2}{3x^2}+2) = 2x + \frac{1}{x^2} - 3 \)</div>
+    <div class="output-box">\( b - c = (x+\frac{1}{3x^2}-1) - (-x-\frac{2}{3x^2}+2) = 2x + \frac{1}{x^2} - 3 \)</div>
     利用三元均值不等式：
-    <div class="output-box" style="white-space: nowrap;">\( 2x+\frac{1}{x^2} = x+x+\frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
+    <div class="output-box">\( 2x+\frac{1}{x^2} = x+x+\frac{1}{x^2} \ge 3\sqrt[3]{x \cdot x \cdot \frac{1}{x^2}} = 3 \)</div>
     所以 \(b-c = 2x + \frac{1}{x^2} - 3 \ge 0\)，即 \(b \ge c\)。</li>
   </ul>
   <p>综上，我们有 \(a \ge b \ge c\)。等号在 \(x-1=0\) 和 \(x=1/x^2\) 时同时成立，即 \(x=1\) 时成立。
